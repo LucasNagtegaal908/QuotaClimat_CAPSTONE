@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClimateMonitor | Media Analysis Flanders</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;0,800;1,400&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-surface": "#191c1d",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2e3132",
+              "tertiary-fixed": "#ffdf9b",
+              "secondary-container": "#b0f1cc",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#5b4300",
+              "on-secondary-fixed": "#002113",
+              "surface-bright": "#f8f9fa",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "tertiary": "#332400",
+              "on-surface-variant": "#414844",
+              "surface-variant": "#e1e3e4",
+              "primary": "#012d1d",
+              "surface-container-high": "#e7e8e9",
+              "surface-tint": "#3f6653",
+              "primary-fixed": "#c1ecd4",
+              "on-primary-container": "#86af99",
+              "inverse-primary": "#a5d0b9",
+              "secondary": "#2b694d",
+              "on-tertiary-container": "#caa13b",
+              "secondary-fixed": "#b0f1cc",
+              "on-tertiary-fixed": "#251a00",
+              "on-secondary-container": "#327053",
+              "surface": "#f8f9fa",
+              "surface-container-highest": "#e1e3e4",
+              "on-secondary-fixed-variant": "#0c5136",
+              "on-error": "#ffffff",
+              "primary-container": "#1b4332",
+              "inverse-on-surface": "#f0f1f2",
+              "on-primary-fixed": "#002114",
+              "surface-dim": "#d9dadb",
+              "tertiary-container": "#4d3900",
+              "background": "#f8f9fa",
+              "outline-variant": "#c1c8c2",
+              "outline": "#717973",
+              "on-primary-fixed-variant": "#274e3d",
+              "surface-container-low": "#f3f4f5",
+              "surface-container": "#edeeef",
+              "primary-fixed-dim": "#a5d0b9",
+              "on-background": "#191c1d",
+              "tertiary-fixed-dim": "#edc157",
+              "secondary-fixed-dim": "#94d4b1"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Work Sans", "sans-serif"],
+              "label": ["Work Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .newsreader-italic { font-family: 'Newsreader'; font-style: italic; }
+      .glass-effect { backdrop-filter: blur(16px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-emerald-950/80 backdrop-blur-md shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-20 px-8 md:px-12 flex justify-between items-center w-full mx-auto">
+<div class="font-['Newsreader'] font-bold text-2xl text-emerald-900 dark:text-emerald-50 tracking-tighter" style="">QuotaClimat</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-900 dark:text-emerald-50 border-b-2 border-emerald-900 dark:border-emerald-50 pb-1 cursor-pointer active:scale-95 duration-200" href="#" style="">Trends</a>
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 dark:text-emerald-200/60 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors cursor-pointer active:scale-95 duration-200" href="#" style="">Themes</a>
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 dark:text-emerald-200/60 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors cursor-pointer active:scale-95 duration-200" href="#" style="">Framing</a>
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 dark:text-emerald-200/60 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors cursor-pointer active:scale-95 duration-200" href="#" style="">Sources</a>
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 dark:text-emerald-200/60 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors cursor-pointer active:scale-95 duration-200" href="#" style="">Analysis</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl text-sm font-medium hover:bg-primary/90 transition-all cursor-pointer active:scale-95 duration-200" style="">Methodology</button>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<header class="min-h-screen flex flex-col justify-center px-8 md:px-24 bg-surface relative overflow-hidden">
+<div class="max-w-4xl z-10">
+<span class="text-primary font-medium tracking-widest uppercase text-xs mb-4 block" style="">QuotaClimat x UvA</span>
+<h1 class="font-headline text-6xl md:text-8xl text-primary font-extrabold tracking-tighter leading-tight mb-8" style="">
+                    Understanding Climate Coverage in  <span class="newsreader-italic font-normal" style="">Flemish media.</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed" style="">
+                    A data-driven analysis of climate coverage in Flemish radio and television. Explore which topics dominate the conversation, how narratives are framed, and where misleading information may shape public understanding.
+                </p>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover grayscale" data-alt="Abstract atmospheric visualization of wind patterns and green botanical textures in a soft professional editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr19tcM6I69bAVPYljXMImEOfwa1jqgqaac5_GdlmmbJkBPkg4A7rLPBXS-67MRF03sIl3jyZqW8McB0eUzHMxDkgg7QCflP-uCkSbGIOqWG9elDalL0chnI89_KIndzysqxdhjj2hfD9fLfQ_hTo7dLDcgc5Bh_SOMxFhlUJf8U8yLMHEEg2QJft4x1CryzsdP4OBCCfK_KJOz1xm7s64nqCdkdkdksbQoNI_CuS24tDSFCQe7Kz0ZFIPnuZipuJxpx_XwkgWouk" style=""/>
+</div>
+<div class="mt-20 flex flex-col items-center animate-bounce opacity-40">
+<span class="material-symbols-outlined text-4xl" style="">expand_more</span>
+</div>
+</header>
+<!-- Quiz Call-to-Action -->
+<section class="px-8 md:px-24 pb-16 -mt-10 relative z-10">
+  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-[0px_12px_32px_rgba(25,28,29,0.08)] p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    
+    <div>
+      <h3 class="font-headline text-2xl font-bold text-primary mb-2">
+        How informed is your news consumption?
+      </h3>
+      <p class="text-on-surface-variant text-sm leading-relaxed max-w-xl">
+        Take a short quiz to find out your media consumption's impact on shaping your understanding of climate change.
+      </p>
+    </div>
+
+    <a
+      href="quiz.html"
+      class="bg-primary text-on-primary px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-all active:scale-95 whitespace-nowrap"
+    >
+      Take the quiz
+    </a>
+
+  </div>
+</section>
+<!-- Section 1: Volume Over Time -->
+<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<h2 class="font-headline text-4xl font-bold text-primary" style="">Keywords/Topic Analysis</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed" style="">
+                    This visualization shows which climate-related keywords appear most frequently in radio and television coverage. It highlights which aspects of the climate debate receive the most attention, and which topics are underrepresented.
+                </p>
+<div class="p-6 bg-surface-container-low rounded-xl">
+<p class="text-sm font-medium text-primary uppercase tracking-tighter" style="">Observation</p>
+<p class="italic text-on-surface" style="">"The floods in Wallonia caused the largest peak in climate-related reporting of the past decade."</p>
+</div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-96 flex flex-col justify-between">
+<div class="flex justify-between items-end h-full gap-2">
+<div class="w-full bg-primary-container h-[20%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[35%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[25%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[60%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[45%] rounded-t-sm"></div>
+<div class="w-full bg-primary h-[95%] rounded-t-sm"></div> <!-- Peak -->
+<div class="w-full bg-primary-container h-[40%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[55%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[30%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[70%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-outline font-medium uppercase tracking-widest">
+<span class="" style="">2019</span>
+<span class="" style="">2021 (Peaks)</span>
+<span class="" style="">2024</span>
+</div>
+</div>
+</section>
+<!-- New Section: The Rise of Digital Media -->
+<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center bg-surface-container-low">
+<div class="bg-white p-8 rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-96 flex flex-col justify-between order-2 lg:order-1">
+<div class="flex items-end h-full gap-4">
+<div class="flex-1 bg-secondary-fixed h-[30%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary-fixed">2019</div>
+<div class="flex-1 bg-secondary-fixed h-[42%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary-fixed">2020</div>
+<div class="flex-1 bg-secondary-fixed h-[58%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary-fixed">2021</div>
+<div class="flex-1 bg-secondary-fixed h-[75%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary-fixed">2022</div>
+<div class="flex-1 bg-secondary-fixed h-[88%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary-fixed">2023</div>
+<div class="flex-1 bg-secondary h-[100%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary">2024</div>
+</div>
+<div class="mt-4 text-center text-[10px] text-outline font-medium uppercase tracking-widest">Growth of Online News Sources Volume Index</div>
+</div>
+<div class="space-y-6 order-1 lg:order-2">
+<h2 class="font-headline text-4xl font-bold text-primary" style="">How much do different broadcasters cover climate issues?</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed" style="">
+                    This chart compares how frequently different radio and television channels cover climate-related topics. It reveals which broadcasters contribute most to the climate conversation, and where coverage remains limited.
+                </p>
+<div class="p-6 bg-white rounded-xl border-l-4 border-secondary">
+<p class="text-sm font-medium text-secondary uppercase tracking-tighter" style="">Digital Shift</p>
+<p class="italic text-on-surface" style="">"Online-only news outlets have tripled their dedicated environmental staff since 2019."</p>
+</div>
+<ul class="mt-2 space-y-1 underline">
+<li><a href="#">For more in-depth analysis between media companies, click here (warning: this link so far goes nowhere)</a></li>
+</ul>
+</div>
+</section>
+<!-- New Section: Seasonal Climate Peaks -->
+<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<h2 class="font-headline text-4xl font-bold text-primary" style="">Data Visualization #3</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed" style="">
+                   depends on the data we have, but some kind of time series showing the peaks in coverage during specific events (heatwaves, floods, international summits) and how they compare to the baseline coverage throughout the year.
+                </p>
+<div class="p-6 bg-surface-container-low rounded-xl">
+<p class="text-sm font-medium text-primary uppercase tracking-tighter" style="">Cyclical Trend</p>
+<p class="italic text-on-surface" style="">"Heatwaves in July and flooding risks in December create bi-annual spikes that often overshadow long-term policy analysis."</p>
+</div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-96 relative flex items-center justify-center overflow-hidden">
+<!-- Stylized Line Chart SVG -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 200">
+<path d="M0 180 Q 50 170 80 120 T 120 40 T 160 140 T 200 160 T 240 130 T 280 30 T 320 150 T 400 140" fill="none" stroke="#012d1d" stroke-width="3"></path>
+<circle cx="120" cy="40" fill="#012d1d" r="4"></circle> <!-- Summer Heatwave -->
+<circle cx="280" cy="30" fill="#012d1d" r="4"></circle> <!-- Winter Flood -->
+</svg>
+<div class="absolute top-4 right-8 text-[10px] flex flex-col items-end text-outline uppercase font-bold">
+<span class="text-primary" style="">● Heatwave Peak</span>
+<span class="text-secondary" style="">● Flood Peak</span>
+</div>
+<div class="absolute bottom-4 w-full flex justify-around text-[10px] text-outline font-medium uppercase tracking-widest px-8">
+<span>JAN</span><span>APR</span><span>JUL</span><span>OCT</span><span>DEC</span>
+</div>
+</div>
+</section>
+<!-- New Section: Regional Focus -->
+<section class="py-32 px-8 md:px-24 bg-surface-container-low">
+<div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+
+<!-- LEFT: Map -->
+<div class="lg:w-1/2">
+<img alt="Map of Belgium showing regions"
+class="w-full rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-700"
+src="https://lh3.googleusercontent.com/aida/ADBb0uj0FMdcIGQ_nKevJ_pFblvxkgL5-WE4dF0WzWr02HLIBldIOLA3x5c21rZDIsfIMAOBtYRYTHts9ktFSbo5PEadk_KwaRPEmcM6PBvjmYpOkgt82x7TKQLb6M2_k5ZyJC_SPFkau4gy5OKRUz7ZmcrxhAmtWAXFDDjeyH9dlfOyynxCgxETYfq3NtyZck4MTqS7Ap0ZoK7t1rMmJnUABQfz_eVPtH8wUb-H3ZLcw1M-d1Ax_YBCv7M6ITU-3n5mcUmG9jDlvbXXmA" />
+</div>
+
+<!-- RIGHT: Interactive Comparison -->
+<div class="lg:w-1/2 space-y-6">
+
+<span class="text-primary font-medium tracking-widest uppercase text-xs block">
+Regional Focus
+</span>
+
+<h2 class="font-headline text-4xl font-bold text-primary">
+Flanders vs Wallonia
+</h2>
+
+<p class="text-on-surface-variant text-lg leading-relaxed">
+Here you can compare how climate change is covered across Belgian regional media landscapes. It is now filled with preliminary values based on hypotheses and research so far, which will be changed later on in the project.
+</p>
+
+<!-- Toggle -->
+<div class="flex gap-4 bg-white p-2 rounded-xl shadow-sm w-fit">
+<button onclick="setRegion('flanders')" id="btn-flanders"
+class="px-6 py-2 rounded-lg bg-primary text-on-primary font-medium transition-all">
+Flanders
+</button>
+
+<button onclick="setRegion('wallonia')" id="btn-wallonia"
+class="px-6 py-2 rounded-lg bg-surface text-primary font-medium hover:bg-surface-container-high transition-all">
+Wallonia
+</button>
+</div>
+
+<!-- Table -->
+<div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+<table class="w-full text-left text-sm">
+<thead class="bg-surface-container-high text-primary uppercase text-xs">
+<tr>
+<th class="p-4">Indicator</th>
+<th class="p-4">Value</th>
+</tr>
+</thead>
+
+<tbody id="regionTable" class="text-on-surface">
+<tr><td class="p-4">Media Focus</td><td class="p-4">Economic & policy framing dominant</td></tr>
+<tr><td class="p-4">Climate Tone</td><td class="p-4">Mostly neutral with slight alarmist peaks</td></tr>
+<tr><td class="p-4">Misinformation Presence</td><td class="p-4">Moderate (energy & cost narratives)</td></tr>
+<tr><td class="p-4">Regulatory Context</td><td class="p-4">Strong public broadcasting standards</td></tr>
+<tr><td class="p-4">Scientific Coverage</td><td class="p-4">Frequently cited</td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+</section>
+
+<script>
+const data = {
+flanders: [
+["Media Focus", "Economic and policy framing dominant"],
+["Climate Tone", "Mostly informative and more emotional"],
+["Misinformation Presence", "Moderate (in opinionated broadcasts)"],
+["Regulatory Context", "Unclear regulatory context"],
+["Scientific Coverage", "Frequently cited, but not outside news broadcasts"]
+],
+wallonia: [
+["Media Focus", "More political and informative framing"],
+["Climate Tone", "Mostly informative and less emotional"],
+["Misinformation Presence", "Lower but more polarised"],
+["Regulatory Context", "Clear regulatory context"],
+["Scientific Coverage", "Less consistent citation"]
+]
+};
+
+function setRegion(region) {
+const table = document.getElementById("regionTable");
+table.innerHTML = "";
+
+data[region].forEach(row => {
+table.innerHTML += `
+<tr>
+<td class="p-4">${row[0]}</td>
+<td class="p-4">${row[1]}</td>
+</tr>`;
+});
+
+// Reset both buttons
+const btnF = document.getElementById("btn-flanders");
+const btnW = document.getElementById("btn-wallonia");
+
+btnF.classList.remove("bg-primary","text-on-primary");
+btnW.classList.remove("bg-primary","text-on-primary");
+
+// Apply active style
+if(region === "flanders"){
+btnF.classList.add("bg-primary","text-on-primary");
+btnW.classList.add("bg-surface","text-primary");
+} else {
+btnW.classList.add("bg-primary","text-on-primary");
+btnF.classList.add("bg-surface","text-primary");
+}
+}
+</script>
+<!-- Section 2: Topics / Sectors -->
+<section class="py-32 px-8 md:px-24 bg-surface">
+<div class="max-w-6xl mx-auto flex flex-col lg:flex-row-reverse gap-16 items-center">
+<div class="lg:w-1/2 space-y-6">
+<h2 class="font-headline text-4xl font-bold text-primary" style="">Data visualization #5</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed" style="">
+                        Depends on the data we have, but this could be a breakdown of the most covered sectors (energy, transport, agriculture, etc.) and how they evolve over time. It would show which parts of the climate debate are most visible in the media, and which ones are neglected. However, the type of speakers, timeslots or programme types are also options.
+                    </p>
+</div>
+<div class="lg:w-1/2 w-full space-y-4">
+<div class="space-y-1">
+<div class="flex justify-between text-sm font-medium"><span class="text-primary" style="">Energy</span><span class="" style="">42%</span></div>
+<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[42%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-sm font-medium"><span class="text-primary" style="">Political Policy</span><span class="" style="">31%</span></div>
+<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[31%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-sm font-medium"><span class="text-primary" style="">Agriculture</span><span class="" style="">15%</span></div>
+<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[15%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-sm font-medium"><span class="text-primary" style="">Transport</span><span class="" style="">12%</span></div>
+<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[12%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Framing / Sentiment -->
+<section class="py-32 px-8 md:px-24">
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<h2 class="font-headline text-4xl font-bold text-primary" style="">The tone of the debate</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed" style="">
+                        How is climate change being framed? We see a strong rise in 'alarmist' tones, but also a persistent core of skeptical reporting in specific media ecosystems.
+                    </p>
+</div>
+<div class="relative h-64 w-full flex items-center gap-1">
+<div class="h-full flex-grow bg-primary flex items-center justify-center text-on-primary text-xs font-bold rounded-l-xl" style="">NEUTRAL (55%)</div>
+<div class="h-full w-[30%] bg-secondary flex items-center justify-center text-on-secondary text-xs font-bold" style="">ALARMIST (30%)</div>
+<div class="h-full w-[15%] bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed text-xs font-bold rounded-r-xl" style="">SKEPTICAL (15%)</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Media Sources -->
+<section class="py-32 px-8 md:px-24 bg-surface-container-low">
+<div class="max-w-6xl mx-auto text-center mb-16">
+<h2 class="font-headline text-4xl font-bold text-primary" style="">Differences between media groups</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto mt-4" style="">Not every medium approaches the crisis the same way. We compare the depth and frequency between the major players.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 bg-white rounded-xl shadow-sm border-b-4 border-primary">
+<h3 class="font-bold text-xl mb-4" style="">Quality Newspapers</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6" style="">Focus more on scientific context and international policymaking.</p>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined" style="">analytics</span>
+<span class="" style="">Highest depth-score</span>
+</div>
+</div>
+<div class="p-8 bg-white rounded-xl shadow-sm border-b-4 border-secondary">
+<h3 class="font-bold text-xl mb-4" style="">Popular Media</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6" style="">Emphasize the impact on the citizen's wallet (energy prices).</p>
+<div class="flex items-center gap-2 text-secondary font-bold">
+<span class="material-symbols-outlined" style="">trending_up</span>
+<span class="" style="">Highest volume</span>
+</div>
+</div>
+<div class="p-8 bg-white rounded-xl shadow-sm border-b-4 border-tertiary-fixed">
+<h3 class="font-bold text-xl mb-4" style="">Public Broadcaster</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6" style="">Maintains the most neutral tone with a strong focus on education.</p>
+<div class="flex items-center gap-2 text-tertiary font-bold">
+<span class="material-symbols-outlined" style="">verified</span>
+<span class="" style="">Most balanced</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Key Insight Highlight -->
+<section class="py-40 px-8 md:px-24 bg-primary text-on-primary text-center overflow-hidden relative">
+<div class="max-w-4xl mx-auto z-10 relative">
+<p class="text-primary-fixed uppercase tracking-widest text-sm mb-8 font-medium" style="">Key Insight</p>
+<h2 class="font-headline text-5xl md:text-7xl font-bold leading-tight italic" style="">
+                    70% of articles focus only on <span class="text-tertiary-fixed underline decoration-wavy underline-offset-8" style="">economic consequences</span>, instead of ecological reality.
+                </h2>
+</div>
+<div class="absolute inset-0 opacity-10">
+<img class="w-full h-full object-cover" data-alt="Abstract procedural texture of overlapping circular data points representing volume and density in deep forest green tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj58XLb-OxJl5qQZjexolrZ3lKvA_PF7HqCFXTewYBiny1fgA_3_td-7WAh6rJfMCXU1VHsI_Ou_FRWYweyv8UGz__Qkgj1zoiayGnkzgsJdyEvyNBRFjFeISkWiY8LTHQhTJsA53abGJ-5YIhgN-2jygqdHNWAre6hK89l-OcL7gICifEfOL-_-bs-GudUsM3d0yO3GDuu7K3ogv2UwGIvZkOMOitZxebQbfjj2E2y9KH9IFEM2360c4f6syEXSNUQ36rC61Ut5s" style=""/>
+</div>
+</section>
+<!-- Section: Misinformation Prevalence -->
+<section class="py-32 px-8 md:px-24 bg-surface">
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+<!-- Text -->
+<div class="space-y-6">
+<h2 class="font-headline text-4xl font-bold text-primary">
+Misinformation prevalence over time
+</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+This visualisation shows how much misinformation appears over time and over different broadcasters. Each cluster represents a period of time, with multiple bars indicating variation between media outlets.
+</p>
+
+<div class="p-6 bg-surface-container-low rounded-xl">
+<p class="text-sm font-medium text-primary uppercase tracking-tighter">Interpretation</p>
+<p class="italic text-on-surface">
+"Variation between broadcasters remains significant, although certain time periods show how higher overall misinformation."
+</p>
+</div>
+</div>
+
+<!-- Chart -->
+<div class="bg-white p-8 rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-96 flex flex-col justify-end">
+
+<!-- Chart bars -->
+<div class="flex items-end justify-between h-full gap-6">
+
+<!-- Period 1 -->
+<div class="flex gap-1 items-end h-full w-full">
+<div class="w-full bg-primary-container h-[30%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[45%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[25%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[50%] rounded-t-sm"></div>
+</div>
+
+<!-- Period 2 -->
+<div class="flex gap-1 items-end h-full w-full">
+<div class="w-full bg-secondary-fixed h-[40%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-fixed h-[65%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-fixed h-[35%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-fixed h-[80%] rounded-t-sm"></div>
+</div>
+
+<!-- Period 3 -->
+<div class="flex gap-1 items-end h-full w-full">
+<div class="w-full bg-primary-container h-[55%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[75%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[50%] rounded-t-sm"></div>
+<div class="w-full bg-primary h-[85%] rounded-t-sm"></div>
+</div>
+
+<!-- Period 4 -->
+<div class="flex gap-1 items-end h-full w-full">
+<div class="w-full bg-secondary-fixed h-[20%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-fixed h-[30%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-fixed h-[35%] rounded-t-sm"></div>
+<div class="w-full bg-secondary h-[40%] rounded-t-sm"></div>
+</div>
+
+</div>
+</div>
+<p>To see the details of the methodology of how we got these number, click <a href="#" class="text-primary underline">here</a>.</p>
+</div>
+</section>
+<!-- Section 6: Interactive Tool - Misinformation Dashboard -->
+<section class="py-32 px-8 md:px-24">
+  <div class="max-w-5xl mx-auto bg-surface-container-highest p-12 rounded-3xl">
+    
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-primary-container px-4 py-1 rounded-full text-on-primary-container text-xs font-bold mb-4">
+        <span class="material-symbols-outlined text-sm">dashboard</span>
+        INTERACTIVE DASHBOARD
+      </div>
+      <h2 class="font-headline text-4xl font-bold text-primary mb-4">
+        Misinformation Scenarios
+      </h2>
+      <p class="text-on-surface-variant">
+        Here you can explore common climate change misinformation narratives. Click on each card to see a detailed analysis and examples to look at in more detail.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- Card 1 -->
+      <div onclick="showDetail(0)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-secondary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">
+          “Variable renewables make the price of electricity explode.”
+        </p>
+        <span class="text-sm font-bold text-secondary uppercase">Misleading</span>
+      </div>
+
+      <!-- Card 2 -->
+      <div onclick="showDetail(1)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-tertiary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">
+          “Scientific data on climate change is falsified to manipulate public opinion.”
+        </p>
+        <span class="text-sm font-bold text-tertiary uppercase">Unsupported</span>
+      </div>
+
+      <!-- Card 3 -->
+      <div onclick="showDetail(2)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">
+          “Low-emissions zones don’t reduce greenhouse gases.”
+        </p>
+        <span class="text-sm font-bold text-primary uppercase">Inaccurate</span>
+      </div>
+
+      <!-- Card 4 -->
+      <div onclick="showDetail(3)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-secondary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">
+          “Air conditioning has no negative impact and is a good solution.”
+        </p>
+        <span class="text-sm font-bold text-secondary uppercase">Lacks context</span>
+      </div>
+
+    </div>
+
+    <!-- Detail Panel -->
+    <div id="detailBox" class="mt-10 hidden p-8 bg-white rounded-2xl border border-outline-variant">
+      <h3 id="detailTitle" class="font-bold text-xl text-primary mb-4"></h3>
+      <p id="detailText" class="text-on-surface-variant leading-relaxed"></p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const scenarios = [
+    {
+      title: "Misleading claim about electricity prices",
+      text: "Debunking can be found in a report written by QuotaClimat themselves in Data for Good, QuotaClimat, & ScienceFeedback (2025). Mapping Climate Disinformation in French and Brazilian Mainstream Media. https://quotaclimat.org/app/uploads/2025/10/Mapping-climate-disinformation-France-Brazil-medias-october-2025.pdf.); Examples can only be found when data has been analysed."
+    },
+    {
+      title: "Conspiracy about scientific manipulation",
+      text: "Debunking can be found in a report written by QuotaClimat themselves in Data for Good, QuotaClimat, & ScienceFeedback (2025). Mapping Climate Disinformation in French and Brazilian Mainstream Media. https://quotaclimat.org/app/uploads/2025/10/Mapping-climate-disinformation-France-Brazil-medias-october-2025.pdf.); Examples can only be found when data has been analysed."
+    },
+    {
+      title: "Low-emission zones",
+      text: "Debunking can be found in a report written by QuotaClimat themselves in Data for Good, QuotaClimat, & ScienceFeedback (2025). Mapping Climate Disinformation in French and Brazilian Mainstream Media. https://quotaclimat.org/app/uploads/2025/10/Mapping-climate-disinformation-France-Brazil-medias-october-2025.pdf.); Examples can only be found when data has been analysed."
+    },
+    {
+      title: "Air conditioning and climate",
+      text: "Debunking can be found in a report written by QuotaClimat themselves in Data for Good, QuotaClimat, & ScienceFeedback (2025). Mapping Climate Disinformation in French and Brazilian Mainstream Media. https://quotaclimat.org/app/uploads/2025/10/Mapping-climate-disinformation-France-Brazil-medias-october-2025.pdf.); Examples can only be found when data has been analysed."
+    }
+  ];
+
+  function showDetail(index) {
+    const box = document.getElementById("detailBox");
+    document.getElementById("detailTitle").innerText = scenarios[index].title;
+    document.getElementById("detailText").innerText = scenarios[index].text;
+    box.classList.remove("hidden");
+  }
+</script>
+<!-- Section: From Insight to Action -->
+<section class="py-32 px-8 md:px-24 bg-surface-container-low">
+<div class="max-w-6xl mx-auto space-y-20">
+
+<!-- Header -->
+<div class="text-center max-w-2xl mx-auto">
+<h2 class="font-headline text-4xl font-bold text-primary">From Insight to Action</h2>
+<p class="text-on-surface-variant mt-4 text-lg">
+How can the data be used practically and in a sustainable way? Here we outline pathways for policymakers and journalists to strengthen climate change media coverage in Flanders.
+(Note: this section has been partially AI-created for efficiency purposes (although the idea and direction it goes in is totally coming from us). For our final product the texts here will be more in-depth and handwritten by following research outcomes from our study (so this will certainly be replaced, but for now this is to show off our prototype idea)).
+</p>
+</div>
+
+<!-- GRID -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+<!-- LAWMAKERS -->
+<div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-primary space-y-6">
+<h3 class="font-headline text-2xl font-bold text-primary">For Policymakers</h3>
+
+<p class="text-on-surface-variant text-sm leading-relaxed">
+Use media analysis to design more effective climate communication strategies and regulatory frameworks.
+</p>
+
+<ul class="space-y-4 text-sm text-on-surface">
+
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary">policy</span>
+<span>
+<strong>Strengthen media guidelines:</strong> Encourage balanced and evidence-based reporting through updated broadcasting standards.
+</span>
+</li>
+
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary">groups</span>
+<span>
+<strong>Support public broadcasters:</strong> Invest in explanatory journalism and science communication.
+</span>
+</li>
+
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary">gavel</span>
+<span>
+<strong>Align regulation across regions:</strong> Compare Flemish and Walloon frameworks to identify gaps and best practices.
+</span>
+</li>
+
+</ul>
+
+<div class="pt-4 border-t border-outline-variant text-xs text-outline">
+Prototype resources:
+<ul class="mt-2 space-y-1 underline">
+<li><a href="#">Coming in the future I suppose?</a></li>
+</ul>
+</div>
+</div>
+
+<!-- JOURNALISTS -->
+<div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-secondary space-y-6">
+<h3 class="font-headline text-2xl font-bold text-secondary">For Journalists</h3>
+
+<p class="text-on-surface-variant text-sm leading-relaxed">
+Leverage insights to improve accuracy, framing, and depth in climate reporting.
+</p>
+
+<ul class="space-y-4 text-sm text-on-surface">
+
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary">school</span>
+<span>
+<strong>Training & literacy:</strong> Develop newsroom training on climate science and data interpretation.
+</span>
+</li>
+
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary">fact_check</span>
+<span>
+<strong>Recognise misinformation patterns:</strong> Learn to recognise misinformation patterns in media and employ this knowledge in your work.
+</span>
+</li>
+
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary">balance</span>
+<span>
+<strong>Improve framing:</strong> Move beyond scaring narratives toward solution-oriented coverage.
+</span>
+</li>
+
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary">public</span>
+<span>
+<strong>Diversify sources:</strong> Include scientists, local voices, and affected communities.
+</span>
+</li>
+
+</ul>
+
+<div class="pt-4 border-t border-outline-variant text-xs text-outline">
+Prototype resources:
+<ul class="mt-2 space-y-1 underline">
+<li><a href="#">Coming I suppose</a></li>
+<li><a href="#">Workshops & training modules</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+<!-- Conclusion Section -->
+<section class="py-32 px-8 md:px-24 bg-surface text-center">
+<div class="max-w-2xl mx-auto space-y-8">
+<h2 class="font-headline text-4xl font-bold text-primary" style="">Towards a better climate debate</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed" style="">
+                    Our data suggests that the media can play a crucial role in how action-ready the public is. By shifting focus from pure economic fear to solution-oriented journalism, we can accelerate the transition.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all" style="">Read our full report</button>
+<button class="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-bold hover:bg-surface-container-high transition-all" style="">Download the data (.csv)</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-emerald-50 dark:bg-emerald-950 text-emerald-900 dark:text-emerald-100 py-16 px-8 md:px-12 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-start gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="font-['Newsreader'] font-bold text-xl text-emerald-900 dark:text-emerald-50" style="">ClimateMonitor Flanders</div>
+<p class="font-['Work_Sans'] text-sm leading-relaxed max-w-xs text-emerald-800/70" style="">An independent initiative for monitoring climate narratives in the Belgian press.</p>
+</div>
+<div class="grid grid-cols-2 gap-x-16 gap-y-4">
+<div class="space-y-3">
+<p class="font-bold text-xs uppercase tracking-widest text-emerald-900/50" style="">Navigation</p>
+<a class="block text-emerald-800/70 dark:text-emerald-200/70 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors inline-block transition-transform hover:-translate-y-0.5" href="#" style="">About us</a>
+<a class="block text-emerald-800/70 dark:text-emerald-200/70 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors inline-block transition-transform hover:-translate-y-0.5 underline decoration-emerald-900/30" href="#" style="">Data sources</a>
+</div>
+<div class="space-y-3">
+<p class="font-bold text-xs uppercase tracking-widest text-emerald-900/50" style="">Legal</p>
+<a class="block text-emerald-800/70 dark:text-emerald-200/70 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors inline-block transition-transform hover:-translate-y-0.5" href="#" style="">Privacy policy</a>
+<a class="block text-emerald-800/70 dark:text-emerald-200/70 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors inline-block transition-transform hover:-translate-y-0.5" href="#" style="">Contact</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-emerald-900/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-['Work_Sans'] text-emerald-800/50">
+<p class="" style="">© 2024 ClimateMonitor Flanders. All rights reserved.</p>
+<div class="flex gap-4">
+<span class="" style="">In collaboration with Mediahuis &amp; DPG Media</span>
+</div>
+</div>
+</footer>
+</body></html>

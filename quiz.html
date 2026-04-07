@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Quiz | QuotaClimat</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-surface": "#191c1d",
+            "on-secondary": "#ffffff",
+            "inverse-surface": "#2e3132",
+            "tertiary-fixed": "#ffdf9b",
+            "secondary-container": "#b0f1cc",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#5b4300",
+            "on-secondary-fixed": "#002113",
+            "surface-bright": "#f8f9fa",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "tertiary": "#332400",
+            "on-surface-variant": "#414844",
+            "surface-variant": "#e1e3e4",
+            "primary": "#012d1d",
+            "surface-container-high": "#e7e8e9",
+            "surface-tint": "#3f6653",
+            "primary-fixed": "#c1ecd4",
+            "on-primary-container": "#86af99",
+            "inverse-primary": "#a5d0b9",
+            "secondary": "#2b694d",
+            "on-tertiary-container": "#caa13b",
+            "secondary-fixed": "#b0f1cc",
+            "on-tertiary-fixed": "#251a00",
+            "on-secondary-container": "#327053",
+            "surface": "#f8f9fa",
+            "surface-container-highest": "#e1e3e4",
+            "on-secondary-fixed-variant": "#0c5136",
+            "on-error": "#ffffff",
+            "primary-container": "#1b4332",
+            "inverse-on-surface": "#f0f1f2",
+            "on-primary-fixed": "#002114",
+            "surface-dim": "#d9dadb",
+            "tertiary-container": "#4d3900",
+            "background": "#f8f9fa",
+            "outline-variant": "#c1c8c2",
+            "outline": "#717973",
+            "on-primary-fixed-variant": "#274e3d",
+            "surface-container-low": "#f3f4f5",
+            "surface-container": "#edeeef",
+            "primary-fixed-dim": "#a5d0b9",
+            "on-background": "#191c1d",
+            "tertiary-fixed-dim": "#edc157",
+            "secondary-fixed-dim": "#94d4b1"
+          },
+          fontFamily: {
+            "headline": ["Newsreader", "serif"],
+            "body": ["Work Sans", "sans-serif"],
+            "label": ["Work Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .newsreader-italic { font-family: 'Newsreader'; font-style: italic; }
+    .glass-effect { backdrop-filter: blur(16px); }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-20 px-8 md:px-12 flex justify-between items-center">
+  <a href="primary2.html" class="font-['Newsreader'] font-bold text-2xl text-emerald-900 tracking-tighter">QuotaClimat</a>
+  <div class="hidden md:flex gap-8 items-center">
+    <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="primary2.html">Trends</a>
+    <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="#">Themes</a>
+    <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="#">Framing</a>
+    <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="#">Sources</a>
+    <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="#">Analysis</a>
+  </div>
+  <button class="bg-primary text-on-primary px-6 py-2 rounded-xl text-sm font-medium hover:bg-primary/90 transition-all cursor-pointer active:scale-95 duration-200">Methodology</button>
+</nav>
+
+<main class="pt-20 min-h-screen flex flex-col items-center justify-center px-8 md:px-24">
+  <div class="max-w-2xl w-full text-center">
+    <span class="text-primary font-medium tracking-widest uppercase text-xs mb-4 block">Quiz</span>
+    <h1 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-6">
+      How informed is your <span class="newsreader-italic font-normal">news consumption?</span>
+    </h1>
+    <p class="text-on-surface-variant text-lg leading-relaxed">
+      Coming soon.
+    </p>
+  </div>
+</main>
+
+</body>
+</html>
