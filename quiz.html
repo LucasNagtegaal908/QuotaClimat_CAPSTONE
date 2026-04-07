@@ -77,6 +77,23 @@
     }
     .newsreader-italic { font-family: 'Newsreader'; font-style: italic; }
     .glass-effect { backdrop-filter: blur(16px); }
+
+    .question-slide {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .question-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      position: relative;
+    }
   </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
@@ -95,16 +112,125 @@
 </nav>
 
 <main class="pt-20 min-h-screen flex flex-col items-center justify-center px-8 md:px-24">
-  <div class="max-w-2xl w-full text-center">
-    <span class="text-primary font-medium tracking-widest uppercase text-xs mb-4 block">Quiz</span>
-    <h1 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-6">
-      How informed is your <span class="newsreader-italic font-normal">news consumption?</span>
-    </h1>
-    <p class="text-on-surface-variant text-lg leading-relaxed">
-      Coming soon.
-    </p>
+
+  <!-- Progress bar -->
+  <div class="fixed top-20 left-0 w-full h-1 bg-surface-container-high z-40">
+    <div id="progress-bar" class="h-full bg-primary transition-all duration-500" style="width: 0%"></div>
+  </div>
+
+  <!-- Quiz container -->
+  <div class="relative w-full max-w-2xl" style="min-height: 60vh;">
+
+    <!-- Question 1 -->
+    <div class="question-slide active" data-index="0">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 1 of 8</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 1</h2>
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+        <button onclick="answer(0)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
+        <button onclick="answer(0)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question-slide" data-index="1">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 2 of 8</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 2</h2>
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+        <button onclick="answer(1)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
+        <button onclick="answer(1)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question-slide" data-index="2">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 3 of 8</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 3</h2>
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+        <button onclick="answer(2)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
+        <button onclick="answer(2)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question-slide" data-index="3">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 4 of 8</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 4</h2>
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+        <button onclick="answer(3)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
+        <button onclick="answer(3)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question-slide" data-index="4">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 5 of 8</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 5</h2>
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+        <button onclick="answer(4)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
+        <button onclick="answer(4)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question-slide" data-index="5">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 6 of 8</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 6</h2>
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+        <button onclick="answer(5)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
+        <button onclick="answer(5)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question-slide" data-index="6">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 7 of 8</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 7</h2>
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+        <button onclick="answer(6)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
+        <button onclick="answer(6)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question-slide" data-index="7">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 8 of 8</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 8</h2>
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+        <button onclick="answer(7)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
+        <button onclick="answer(7)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      </div>
+    </div>
+
+    <!-- Result screen -->
+    <div class="question-slide" data-index="8">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Complete</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-6 text-center">Thanks for taking the quiz.</h2>
+      <p class="text-on-surface-variant text-lg text-center mb-10">Your results will appear here once the quiz is fully set up.</p>
+      <a href="index.html" class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-95 duration-200">Back to home</a>
+    </div>
+
   </div>
 </main>
+
+<script>
+  const slides = document.querySelectorAll('.question-slide');
+  const progressBar = document.getElementById('progress-bar');
+  const total = 8;
+
+  function answer(currentIndex) {
+    const current = slides[currentIndex];
+    const next = slides[currentIndex + 1];
+
+    current.style.opacity = '0';
+    current.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+      current.classList.remove('active');
+      next.classList.add('active');
+      progressBar.style.width = ((currentIndex + 1) / total * 100) + '%';
+    }, 500);
+  }
+</script>
 
 </body>
 </html>
