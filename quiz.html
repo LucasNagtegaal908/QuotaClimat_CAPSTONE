@@ -78,7 +78,7 @@
     .newsreader-italic { font-family: 'Newsreader'; font-style: italic; }
     .glass-effect { backdrop-filter: blur(16px); }
 
-    .question-slide {
+    .question-slide, .intro-slide {
       opacity: 0;
       transition: opacity 0.5s ease;
       pointer-events: none;
@@ -89,7 +89,7 @@
       align-items: center;
       justify-content: center;
     }
-    .question-slide.active {
+    .question-slide.active, .intro-slide.active {
       opacity: 1;
       pointer-events: auto;
       position: relative;
@@ -121,8 +121,22 @@
   <!-- Quiz container -->
   <div class="relative w-full max-w-2xl" style="min-height: 60vh;">
 
+    <!-- Intro screen -->
+    <div class="intro-slide active">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Quiz</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-6 text-center">
+        How informed is your <span class="newsreader-italic font-normal">news consumption?</span>
+      </h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed text-center max-w-lg mb-10">
+        Answer 8 short questions to find out how climate change is covered in the media you consume — and what that means for your understanding of the crisis.
+      </p>
+      <button type="button" onclick="startQuiz()" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">
+        Start quiz
+      </button>
+    </div>
+
     <!-- Question 1 -->
-    <div class="question-slide active" data-index="0">
+    <div class="question-slide" data-index="0">
       <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 1 of 8</span>
       <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 1</h2>
       <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
@@ -213,9 +227,19 @@
 </main>
 
 <script>
+  const intro = document.querySelector('.intro-slide');
   const slides = document.querySelectorAll('.question-slide');
   const progressBar = document.getElementById('progress-bar');
   const total = 8;
+
+  function startQuiz() {
+    intro.style.opacity = '0';
+    intro.style.pointerEvents = 'none';
+    setTimeout(() => {
+      intro.classList.remove('active');
+      slides[0].classList.add('active');
+    }, 500);
+  }
 
   function answer(currentIndex) {
     const current = slides[currentIndex];
