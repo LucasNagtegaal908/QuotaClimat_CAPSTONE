@@ -128,7 +128,7 @@
         How informed is your <span class="newsreader-italic font-normal">news consumption?</span>
       </h2>
       <p class="text-on-surface-variant text-lg leading-relaxed text-center max-w-lg mb-10">
-        Answer 8 short questions to find out how climate change is covered in the media you consume — and what that means for your understanding of the crisis.
+        Answer 6 short questions to find out how climate change is covered in the media you consume — and what that means for your understanding of the crisis.
       </p>
       <button type="button" onclick="startQuiz()" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">
         Start quiz
@@ -137,86 +137,153 @@
 
     <!-- Question 1 -->
     <div class="question-slide" data-index="0">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 1 of 8</span>
-      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 1</h2>
-      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-        <button onclick="answer(0)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
-        <button onclick="answer(0)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 1 of 6</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">Which of the following sources do you use most often to get information about climate change?</h2>
+      <div class="flex flex-col gap-3 w-full mb-8">
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q0" value="Television" class="accent-primary w-4 h-4 shrink-0"> Television
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q0" value="Radio" class="accent-primary w-4 h-4 shrink-0"> Radio
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q0" value="Online news websites" class="accent-primary w-4 h-4 shrink-0"> Online news websites
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q0" value="Social Media" class="accent-primary w-4 h-4 shrink-0"> Social Media (Instagram, TikTok, X, etc.)
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q0" value="Podcasts" class="accent-primary w-4 h-4 shrink-0"> Podcasts
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q0" value="Friends / family" class="accent-primary w-4 h-4 shrink-0"> Friends / family
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q0" value="I don't actively follow climate news" class="accent-primary w-4 h-4 shrink-0"> I don't actively follow climate news
+        </label>
       </div>
+      <button type="button" onclick="nextQuestion(0)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
     </div>
 
     <!-- Question 2 -->
     <div class="question-slide" data-index="1">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 2 of 8</span>
-      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 2</h2>
-      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-        <button onclick="answer(1)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
-        <button onclick="answer(1)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 2 of 6</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">How often do you encounter climate change topics in the media you consume?</h2>
+      <div class="flex flex-col gap-3 w-full mb-8">
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q1" value="Very often" class="accent-primary w-4 h-4 shrink-0"> Very often
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q1" value="Often" class="accent-primary w-4 h-4 shrink-0"> Often
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q1" value="Sometimes" class="accent-primary w-4 h-4 shrink-0"> Sometimes
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q1" value="Rarely" class="accent-primary w-4 h-4 shrink-0"> Rarely
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q1" value="Never" class="accent-primary w-4 h-4 shrink-0"> Never
+        </label>
       </div>
+      <button type="button" onclick="nextQuestion(1)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
     </div>
 
     <!-- Question 3 -->
     <div class="question-slide" data-index="2">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 3 of 8</span>
-      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 3</h2>
-      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-        <button onclick="answer(2)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
-        <button onclick="answer(2)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 3 of 6</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">How much do you trust the information about climate change presented in the media you consume?</h2>
+      <div class="flex flex-col gap-3 w-full mb-8">
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q2" value="Completely trust" class="accent-primary w-4 h-4 shrink-0"> Completely trust
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q2" value="Mostly trust" class="accent-primary w-4 h-4 shrink-0"> Mostly trust
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q2" value="Neutral" class="accent-primary w-4 h-4 shrink-0"> Neutral
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q2" value="Mostly distrust" class="accent-primary w-4 h-4 shrink-0"> Mostly distrust
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q2" value="Completely distrust" class="accent-primary w-4 h-4 shrink-0"> Completely distrust
+        </label>
       </div>
+      <button type="button" onclick="nextQuestion(2)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
     </div>
 
     <!-- Question 4 -->
     <div class="question-slide" data-index="3">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 4 of 8</span>
-      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 4</h2>
-      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-        <button onclick="answer(3)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
-        <button onclick="answer(3)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 4 of 6</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">How confident are you in your ability to recognize climate misinformation?</h2>
+      <div class="flex flex-col gap-3 w-full mb-8">
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q3" value="Very confident" class="accent-primary w-4 h-4 shrink-0"> Very confident
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q3" value="Somewhat confident" class="accent-primary w-4 h-4 shrink-0"> Somewhat confident
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q3" value="Neutral" class="accent-primary w-4 h-4 shrink-0"> Neutral
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q3" value="Not very confident" class="accent-primary w-4 h-4 shrink-0"> Not very confident
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q3" value="Not confident at all" class="accent-primary w-4 h-4 shrink-0"> Not confident at all
+        </label>
       </div>
+      <button type="button" onclick="nextQuestion(3)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
     </div>
 
     <!-- Question 5 -->
     <div class="question-slide" data-index="4">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 5 of 8</span>
-      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 5</h2>
-      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-        <button onclick="answer(4)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
-        <button onclick="answer(4)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 5 of 6</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">Which of the following statements do you think is accurate?</h2>
+      <div class="flex flex-col gap-3 w-full mb-8">
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q4" value="97% scientists" class="accent-primary w-4 h-4 shrink-0"> "97% of climate scientists agree that climate change is mainly caused by human activity"
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q4" value="Volcanoes CO2" class="accent-primary w-4 h-4 shrink-0"> "Volcanoes emit more CO2 than human activity each year"
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q4" value="Natural cycle" class="accent-primary w-4 h-4 shrink-0"> "Climate change is only part of a natural cycle with no human influence"
+        </label>
       </div>
+      <button type="button" onclick="nextQuestion(4)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
     </div>
 
     <!-- Question 6 -->
     <div class="question-slide" data-index="5">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 6 of 8</span>
-      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 6</h2>
-      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-        <button onclick="answer(5)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
-        <button onclick="answer(5)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 6 of 6</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">Who do you think is most responsible for preventing climate misinformation?</h2>
+      <div class="flex flex-col gap-3 w-full mb-8">
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q5" value="Media organizations" class="accent-primary w-4 h-4 shrink-0"> Media organizations
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q5" value="Government / policy makers" class="accent-primary w-4 h-4 shrink-0"> Government / policy makers
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q5" value="Scientists" class="accent-primary w-4 h-4 shrink-0"> Scientists
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q5" value="Social media platforms" class="accent-primary w-4 h-4 shrink-0"> Social media platforms
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q5" value="Individual consumers" class="accent-primary w-4 h-4 shrink-0"> Individual consumers
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q5" value="No one / not sure" class="accent-primary w-4 h-4 shrink-0"> No one / not sure
+        </label>
       </div>
-    </div>
-
-    <!-- Question 7 -->
-    <div class="question-slide" data-index="6">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 7 of 8</span>
-      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 7</h2>
-      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-        <button onclick="answer(6)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
-        <button onclick="answer(6)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
-      </div>
-    </div>
-
-    <!-- Question 8 -->
-    <div class="question-slide" data-index="7">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 8 of 8</span>
-      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-12 text-center">Question 8</h2>
-      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-        <button onclick="answer(7)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">Yes</button>
-        <button onclick="answer(7)" class="answer-btn flex-1 py-5 px-8 rounded-xl border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-200">No</button>
-      </div>
+      <button type="button" onclick="nextQuestion(5)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Submit</button>
     </div>
 
     <!-- Result screen -->
-    <div class="question-slide" data-index="8">
+    <div class="question-slide" data-index="6">
       <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Complete</span>
       <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-6 text-center">Thanks for taking the quiz.</h2>
       <p class="text-on-surface-variant text-lg text-center mb-10">Your results will appear here once the quiz is fully set up.</p>
@@ -230,7 +297,7 @@
   const intro = document.querySelector('.intro-slide');
   const slides = document.querySelectorAll('.question-slide');
   const progressBar = document.getElementById('progress-bar');
-  const total = 8;
+  const total = 6;
 
   function startQuiz() {
     intro.style.opacity = '0';
@@ -241,7 +308,10 @@
     }, 500);
   }
 
-  function answer(currentIndex) {
+  function nextQuestion(currentIndex) {
+    const selected = document.querySelector(`input[name="q${currentIndex}"]:checked`);
+    if (!selected) return;
+
     const current = slides[currentIndex];
     const next = slides[currentIndex + 1];
 
