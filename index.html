@@ -134,8 +134,8 @@
   </div>
 </section>
 <!-- Section 1: Volume Over Time -->
-<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="space-y-6">
+<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
+<div class="space-y-6 lg:col-span-1">
 <h2 class="font-headline text-4xl font-bold text-primary" style="">Keywords/Topic Analysis</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed" style="">
                     This visualization shows which climate-related keywords appear most frequently in radio and television coverage. It highlights which aspects of the climate debate receive the most attention, and which topics are underrepresented.
@@ -147,7 +147,7 @@
 </div>
 <!-- CHART 1: Keywords/Topic Analysis -->
 <!-- PASTE your Metabase public embed URL in the src attribute below -->
-<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-96">
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden lg:col-span-2 h-[500px]">
   <iframe
     src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/6ffd642b-8e47-4143-822c-727300532e40"
     frameborder="0"
@@ -159,10 +159,10 @@
 </div>
 </section>
 <!-- New Section: The Rise of Digital Media -->
-<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center bg-surface-container-low">
+<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-3 gap-16 items-center bg-surface-container-low">
 <!-- CHART 2: Broadcaster Coverage Comparison -->
 <!-- PASTE your Metabase public embed URL in the src attribute below -->
-<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-96 order-2 lg:order-1">
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden lg:col-span-2 h-[500px] order-2 lg:order-1">
   <iframe
     src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/5c1e468b-64bb-4294-9a34-a8b6b6fa0d35"
     frameborder="0"
@@ -172,7 +172,7 @@
     title="Chart 2 – Broadcaster Coverage Comparison"
   ></iframe>
 </div>
-<div class="space-y-6 order-1 lg:order-2">
+<div class="space-y-6 lg:col-span-1 order-1 lg:order-2">
 <h2 class="font-headline text-4xl font-bold text-primary" style="">How much do different broadcasters cover climate issues?</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed" style="">
                     This chart compares how frequently different radio and television channels cover climate-related topics. It reveals which broadcasters contribute most to the climate conversation, and where coverage remains limited.
@@ -187,8 +187,8 @@
 </div>
 </section>
 <!-- New Section: Seasonal Climate Peaks -->
-<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="space-y-6">
+<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
+<div class="space-y-6 lg:col-span-1">
 <h2 class="font-headline text-4xl font-bold text-primary" style="">Data Visualization #3</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed" style="">
                    depends on the data we have, but some kind of time series showing the peaks in coverage during specific events (heatwaves, floods, international summits) and how they compare to the baseline coverage throughout the year.
@@ -200,7 +200,7 @@
 </div>
 <!-- CHART 3: Seasonal Coverage Peaks (Time Series) -->
 <!-- PASTE your Metabase public embed URL in the src attribute below -->
-<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-96">
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden lg:col-span-2 h-[500px]">
   <iframe
     src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/84a4e66c-9117-4694-b26d-3ed70675c2c8"
     frameborder="0"
@@ -219,7 +219,7 @@
 <div class="lg:w-1/2">
 <img alt="Map of Belgium showing regions"
 class="w-full rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-700"
-src="https://lh3.googleusercontent.com/aida/ADBb0uj0FMdcIGQ_nKevJ_pFblvxkgL5-WE4dF0WzWr02HLIBldIOLA3x5c21rZDIsfIMAOBtYRYTHts9ktFSbo5PEadk_KwaRPEmcM6PBvjmYpOkgt82x7TKQLb6M2_k5ZyJC_SPFkau4gy5OKRUz7ZmcrxhAmtWAXFDDjeyH9dlfOyynxCgxETYfq3NtyZck4MTqS7Ap0ZoK7t1rMmJnUABQfz_eVPtH8wUb-H3ZLcw1M-d1Ax_YBCv7M6ITU-3n5mcUmG9jDlvbXXmA" />
+src="image/belgium-map.png" />
 </div>
 
 <!-- RIGHT: Interactive Comparison -->
@@ -323,8 +323,8 @@ btnF.classList.add("bg-surface","text-primary");
 </script>
 <!-- Section 2: Topics / Sectors -->
 <section class="py-32 px-8 md:px-24 bg-surface">
-<div class="max-w-6xl mx-auto flex flex-col lg:flex-row-reverse gap-16 items-center">
-<div class="lg:w-1/2 space-y-6">
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
+<div class="lg:col-span-1 space-y-6 lg:order-2">
 <h2 class="font-headline text-4xl font-bold text-primary" style="">Data visualization #5</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed" style="">
                         Depends on the data we have, but this could be a breakdown of the most covered sectors (energy, transport, agriculture, etc.) and how they evolve over time. It would show which parts of the climate debate are most visible in the media, and which ones are neglected. However, the type of speakers, timeslots or programme types are also options.
@@ -332,7 +332,7 @@ btnF.classList.add("bg-surface","text-primary");
 </div>
 <!-- CHART 4: Sector Breakdown (Energy, Policy, Agriculture, Transport…) -->
 <!-- PASTE your Metabase public embed URL in the src attribute below -->
-<div class="lg:w-1/2 w-full bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-96">
+<div class="lg:col-span-2 lg:order-1 w-full bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-[500px]">
   <iframe
     src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/cf4cf19e-790d-48ac-8c2e-b977b3fe5681"
     frameborder="0"
@@ -346,8 +346,8 @@ btnF.classList.add("bg-surface","text-primary");
 </section>
 <!-- Section 3: Framing / Sentiment -->
 <section class="py-32 px-8 md:px-24">
-<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="space-y-6">
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
+<div class="space-y-6 lg:col-span-1">
 <h2 class="font-headline text-4xl font-bold text-primary" style="">The tone of the debate</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed" style="">
                         How is climate change being framed? We see a strong rise in 'alarmist' tones, but also a persistent core of skeptical reporting in specific media ecosystems.
@@ -355,7 +355,7 @@ btnF.classList.add("bg-surface","text-primary");
 </div>
 <!-- CHART 5: Tone / Sentiment Breakdown (Neutral / Alarmist / Skeptical) -->
 <!-- PASTE your Metabase public embed URL in the src attribute below -->
-<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-64 w-full">
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden lg:col-span-2 h-[500px] w-full">
   <iframe
     src="PASTE_METABASE_LINK_HERE"
     frameborder="0"
@@ -414,10 +414,10 @@ btnF.classList.add("bg-surface","text-primary");
 </section>
 <!-- Section: Misinformation Prevalence -->
 <section class="py-32 px-8 md:px-24 bg-surface">
-<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
 
 <!-- Text -->
-<div class="space-y-6">
+<div class="space-y-6 lg:col-span-1">
 <h2 class="font-headline text-4xl font-bold text-primary">
 Misinformation prevalence over time
 </h2>
@@ -435,7 +435,7 @@ This visualisation shows how much misinformation appears over time and over diff
 
 <!-- CHART 6: Misinformation Prevalence Over Time -->
 <!-- PASTE your Metabase public embed URL in the src attribute below -->
-<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-96">
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden lg:col-span-2 h-[500px]">
   <iframe
     src="PASTE_METABASE_LINK_HERE"
     frameborder="0"
