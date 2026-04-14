@@ -125,7 +125,7 @@
     </div>
 
     <a
-      href="quiz.html"
+      href="quiz"
       class="bg-primary text-on-primary px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-all active:scale-95 whitespace-nowrap"
     >
       Take the quiz
@@ -145,38 +145,32 @@
 <p class="italic text-on-surface" style="">"The floods in Wallonia caused the largest peak in climate-related reporting of the past decade."</p>
 </div>
 </div>
-<div class="bg-white p-8 rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-96 flex flex-col justify-between">
-<div class="flex justify-between items-end h-full gap-2">
-<div class="w-full bg-primary-container h-[20%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[35%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[25%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[60%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[45%] rounded-t-sm"></div>
-<div class="w-full bg-primary h-[95%] rounded-t-sm"></div> <!-- Peak -->
-<div class="w-full bg-primary-container h-[40%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[55%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[30%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[70%] rounded-t-sm"></div>
-</div>
-<div class="flex justify-between mt-4 text-[10px] text-outline font-medium uppercase tracking-widest">
-<span class="" style="">2019</span>
-<span class="" style="">2021 (Peaks)</span>
-<span class="" style="">2024</span>
-</div>
+<!-- CHART 1: Keywords/Topic Analysis -->
+<!-- PASTE your Metabase public embed URL in the src attribute below -->
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-96">
+  <iframe
+    src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/6ffd642b-8e47-4143-822c-727300532e40"
+    frameborder="0"
+    width="100%"
+    height="100%"
+    allowtransparency
+    title="Chart 1 – Keywords/Topic Analysis"
+  ></iframe>
 </div>
 </section>
 <!-- New Section: The Rise of Digital Media -->
 <section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center bg-surface-container-low">
-<div class="bg-white p-8 rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-96 flex flex-col justify-between order-2 lg:order-1">
-<div class="flex items-end h-full gap-4">
-<div class="flex-1 bg-secondary-fixed h-[30%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary-fixed">2019</div>
-<div class="flex-1 bg-secondary-fixed h-[42%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary-fixed">2020</div>
-<div class="flex-1 bg-secondary-fixed h-[58%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary-fixed">2021</div>
-<div class="flex-1 bg-secondary-fixed h-[75%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary-fixed">2022</div>
-<div class="flex-1 bg-secondary-fixed h-[88%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary-fixed">2023</div>
-<div class="flex-1 bg-secondary h-[100%] rounded-t-sm flex flex-col justify-end items-center pb-2 text-[10px] font-bold text-on-secondary">2024</div>
-</div>
-<div class="mt-4 text-center text-[10px] text-outline font-medium uppercase tracking-widest">Growth of Online News Sources Volume Index</div>
+<!-- CHART 2: Broadcaster Coverage Comparison -->
+<!-- PASTE your Metabase public embed URL in the src attribute below -->
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-96 order-2 lg:order-1">
+  <iframe
+    src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/5c1e468b-64bb-4294-9a34-a8b6b6fa0d35"
+    frameborder="0"
+    width="100%"
+    height="100%"
+    allowtransparency
+    title="Chart 2 – Broadcaster Coverage Comparison"
+  ></iframe>
 </div>
 <div class="space-y-6 order-1 lg:order-2">
 <h2 class="font-headline text-4xl font-bold text-primary" style="">How much do different broadcasters cover climate issues?</h2>
@@ -204,20 +198,17 @@
 <p class="italic text-on-surface" style="">"Heatwaves in July and flooding risks in December create bi-annual spikes that often overshadow long-term policy analysis."</p>
 </div>
 </div>
-<div class="bg-white p-8 rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-96 relative flex items-center justify-center overflow-hidden">
-<!-- Stylized Line Chart SVG -->
-<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 200">
-<path d="M0 180 Q 50 170 80 120 T 120 40 T 160 140 T 200 160 T 240 130 T 280 30 T 320 150 T 400 140" fill="none" stroke="#012d1d" stroke-width="3"></path>
-<circle cx="120" cy="40" fill="#012d1d" r="4"></circle> <!-- Summer Heatwave -->
-<circle cx="280" cy="30" fill="#012d1d" r="4"></circle> <!-- Winter Flood -->
-</svg>
-<div class="absolute top-4 right-8 text-[10px] flex flex-col items-end text-outline uppercase font-bold">
-<span class="text-primary" style="">● Heatwave Peak</span>
-<span class="text-secondary" style="">● Flood Peak</span>
-</div>
-<div class="absolute bottom-4 w-full flex justify-around text-[10px] text-outline font-medium uppercase tracking-widest px-8">
-<span>JAN</span><span>APR</span><span>JUL</span><span>OCT</span><span>DEC</span>
-</div>
+<!-- CHART 3: Seasonal Coverage Peaks (Time Series) -->
+<!-- PASTE your Metabase public embed URL in the src attribute below -->
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-96">
+  <iframe
+    src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/84a4e66c-9117-4694-b26d-3ed70675c2c8"
+    frameborder="0"
+    width="100%"
+    height="100%"
+    allowtransparency
+    title="Chart 3 – Seasonal Coverage Peaks"
+  ></iframe>
 </div>
 </section>
 <!-- New Section: Regional Focus -->
@@ -339,31 +330,17 @@ btnF.classList.add("bg-surface","text-primary");
                         Depends on the data we have, but this could be a breakdown of the most covered sectors (energy, transport, agriculture, etc.) and how they evolve over time. It would show which parts of the climate debate are most visible in the media, and which ones are neglected. However, the type of speakers, timeslots or programme types are also options.
                     </p>
 </div>
-<div class="lg:w-1/2 w-full space-y-4">
-<div class="space-y-1">
-<div class="flex justify-between text-sm font-medium"><span class="text-primary" style="">Energy</span><span class="" style="">42%</span></div>
-<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-primary w-[42%]"></div>
-</div>
-</div>
-<div class="space-y-1">
-<div class="flex justify-between text-sm font-medium"><span class="text-primary" style="">Political Policy</span><span class="" style="">31%</span></div>
-<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-primary w-[31%]"></div>
-</div>
-</div>
-<div class="space-y-1">
-<div class="flex justify-between text-sm font-medium"><span class="text-primary" style="">Agriculture</span><span class="" style="">15%</span></div>
-<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-secondary w-[15%]"></div>
-</div>
-</div>
-<div class="space-y-1">
-<div class="flex justify-between text-sm font-medium"><span class="text-primary" style="">Transport</span><span class="" style="">12%</span></div>
-<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-secondary w-[12%]"></div>
-</div>
-</div>
+<!-- CHART 4: Sector Breakdown (Energy, Policy, Agriculture, Transport…) -->
+<!-- PASTE your Metabase public embed URL in the src attribute below -->
+<div class="lg:w-1/2 w-full bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-96">
+  <iframe
+    src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/cf4cf19e-790d-48ac-8c2e-b977b3fe5681"
+    frameborder="0"
+    width="100%"
+    height="100%"
+    allowtransparency
+    title="Chart 4 – Sector Breakdown"
+  ></iframe>
 </div>
 </div>
 </section>
@@ -376,10 +353,17 @@ btnF.classList.add("bg-surface","text-primary");
                         How is climate change being framed? We see a strong rise in 'alarmist' tones, but also a persistent core of skeptical reporting in specific media ecosystems.
                     </p>
 </div>
-<div class="relative h-64 w-full flex items-center gap-1">
-<div class="h-full flex-grow bg-primary flex items-center justify-center text-on-primary text-xs font-bold rounded-l-xl" style="">NEUTRAL (55%)</div>
-<div class="h-full w-[30%] bg-secondary flex items-center justify-center text-on-secondary text-xs font-bold" style="">ALARMIST (30%)</div>
-<div class="h-full w-[15%] bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed text-xs font-bold rounded-r-xl" style="">SKEPTICAL (15%)</div>
+<!-- CHART 5: Tone / Sentiment Breakdown (Neutral / Alarmist / Skeptical) -->
+<!-- PASTE your Metabase public embed URL in the src attribute below -->
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-64 w-full">
+  <iframe
+    src="PASTE_METABASE_LINK_HERE"
+    frameborder="0"
+    width="100%"
+    height="100%"
+    allowtransparency
+    title="Chart 5 – Tone / Sentiment Breakdown"
+  ></iframe>
 </div>
 </div>
 </section>
@@ -449,45 +433,17 @@ This visualisation shows how much misinformation appears over time and over diff
 </div>
 </div>
 
-<!-- Chart -->
-<div class="bg-white p-8 rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-96 flex flex-col justify-end">
-
-<!-- Chart bars -->
-<div class="flex items-end justify-between h-full gap-6">
-
-<!-- Period 1 -->
-<div class="flex gap-1 items-end h-full w-full">
-<div class="w-full bg-primary-container h-[30%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[45%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[25%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[50%] rounded-t-sm"></div>
-</div>
-
-<!-- Period 2 -->
-<div class="flex gap-1 items-end h-full w-full">
-<div class="w-full bg-secondary-fixed h-[40%] rounded-t-sm"></div>
-<div class="w-full bg-secondary-fixed h-[65%] rounded-t-sm"></div>
-<div class="w-full bg-secondary-fixed h-[35%] rounded-t-sm"></div>
-<div class="w-full bg-secondary-fixed h-[80%] rounded-t-sm"></div>
-</div>
-
-<!-- Period 3 -->
-<div class="flex gap-1 items-end h-full w-full">
-<div class="w-full bg-primary-container h-[55%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[75%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[50%] rounded-t-sm"></div>
-<div class="w-full bg-primary h-[85%] rounded-t-sm"></div>
-</div>
-
-<!-- Period 4 -->
-<div class="flex gap-1 items-end h-full w-full">
-<div class="w-full bg-secondary-fixed h-[20%] rounded-t-sm"></div>
-<div class="w-full bg-secondary-fixed h-[30%] rounded-t-sm"></div>
-<div class="w-full bg-secondary-fixed h-[35%] rounded-t-sm"></div>
-<div class="w-full bg-secondary h-[40%] rounded-t-sm"></div>
-</div>
-
-</div>
+<!-- CHART 6: Misinformation Prevalence Over Time -->
+<!-- PASTE your Metabase public embed URL in the src attribute below -->
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-96">
+  <iframe
+    src="PASTE_METABASE_LINK_HERE"
+    frameborder="0"
+    width="100%"
+    height="100%"
+    allowtransparency
+    title="Chart 6 – Misinformation Prevalence Over Time"
+  ></iframe>
 </div>
 <p>To see the details of the methodology of how we got these number, click <a href="#" class="text-primary underline">here</a>.</p>
 </div>
