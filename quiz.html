@@ -126,7 +126,7 @@
         How informed is your <span class="newsreader-italic font-normal">news consumption?</span>
       </h2>
       <p class="text-on-surface-variant text-lg leading-relaxed text-center max-w-lg mb-10">
-        Answer 6 short questions to find out how climate change is covered in the media you consume — and what that means for your understanding of the crisis.
+        Answer 11  questions to find out how climate change is covered in the media you consume; and think about this topic in a way you maybe have not before! How could that effect the way you perceive climate change, and the way you reflect on this?
       </p>
       <button type="button" onclick="startQuiz()" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">
         Start quiz
@@ -135,8 +135,8 @@
 
     <!-- Question 1 -->
     <div class="question-slide" data-index="0">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 1 of 6</span>
-      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">Which of the following sources do you use most often to get information about climate change?</h2>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 1 of 11</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">Which of the following sources do you use most often to get news and information about goings-on in the world?</h2>
       <div class="flex flex-col gap-3 w-full mb-8">
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
           <input type="radio" name="q0" value="Television" class="accent-primary w-4 h-4 shrink-0"> Television
@@ -157,31 +157,43 @@
           <input type="radio" name="q0" value="Friends / family" class="accent-primary w-4 h-4 shrink-0"> Friends / family
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q0" value="I don't actively follow climate news" class="accent-primary w-4 h-4 shrink-0"> I don't actively follow climate news
+          <input type="radio" name="q0" value="Academic journals" class="accent-primary w-4 h-4 shrink-0"> Academic journals
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q0" value="I don't actively follow news" class="accent-primary w-4 h-4 shrink-0"> I don't actively follow news
         </label>
       </div>
       <button type="button" onclick="nextQuestion(0)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
     </div>
 
-    <!-- Question 2 -->
+     <!-- Question 2 -->
     <div class="question-slide" data-index="1">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 2 of 6</span>
-      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">How often do you encounter climate change topics in the media you consume?</h2>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 2 of 11</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">In what language (and if in Dutch, in which region) do you follow the news?</h2>
       <div class="flex flex-col gap-3 w-full mb-8">
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q1" value="Very often" class="accent-primary w-4 h-4 shrink-0"> Very often
+          <input type="radio" name="q1" value="Dutch - Netherlands" class="accent-primary w-4 h-4 shrink-0"> Dutch - Netherlands
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q1" value="Often" class="accent-primary w-4 h-4 shrink-0"> Often
+          <input type="radio" name="q1" value="Dutch - Flanders (Belgium)" class="accent-primary w-4 h-4 shrink-0"> Dutch - Flanders (Belgium)
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q1" value="Sometimes" class="accent-primary w-4 h-4 shrink-0"> Sometimes
+          <input type="radio" name="q1" value="English" class="accent-primary w-4 h-4 shrink-0"> English
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q1" value="Rarely" class="accent-primary w-4 h-4 shrink-0"> Rarely
+          <input type="radio" name="q1" value="Spanish" class="accent-primary w-4 h-4 shrink-0"> Spanish
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q1" value="Never" class="accent-primary w-4 h-4 shrink-0"> Never
+          <input type="radio" name="q1" value="French" class="accent-primary w-4 h-4 shrink-0"> French
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q1" value="German" class="accent-primary w-4 h-4 shrink-0"> German
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q1" value="Mandarin" class="accent-primary w-4 h-4 shrink-0"> Mandarin
+        </label>
+          <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q1" value="Other (sorry for potentially disrespecting some languages)" class="accent-primary w-4 h-4 shrink-0"> Other
         </label>
       </div>
       <button type="button" onclick="nextQuestion(1)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
@@ -189,23 +201,23 @@
 
     <!-- Question 3 -->
     <div class="question-slide" data-index="2">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 3 of 6</span>
-      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">How much do you trust the information about climate change presented in the media you consume?</h2>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 3 of 11</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">How often do you encounter climate change topics in the media you consume?</h2>
       <div class="flex flex-col gap-3 w-full mb-8">
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q2" value="Completely trust" class="accent-primary w-4 h-4 shrink-0"> Completely trust
+          <input type="radio" name="q2" value="Very often" class="accent-primary w-4 h-4 shrink-0"> Never
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q2" value="Mostly trust" class="accent-primary w-4 h-4 shrink-0"> Mostly trust
+          <input type="radio" name="q2" value="Often" class="accent-primary w-4 h-4 shrink-0"> Rarely
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q2" value="Neutral" class="accent-primary w-4 h-4 shrink-0"> Neutral
+          <input type="radio" name="q2" value="Sometimes" class="accent-primary w-4 h-4 shrink-0"> Sometimes
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q2" value="Mostly distrust" class="accent-primary w-4 h-4 shrink-0"> Mostly distrust
+          <input type="radio" name="q2" value="Rarely" class="accent-primary w-4 h-4 shrink-0"> Often
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q2" value="Completely distrust" class="accent-primary w-4 h-4 shrink-0"> Completely distrust
+          <input type="radio" name="q2" value="Never" class="accent-primary w-4 h-4 shrink-0"> Very often
         </label>
       </div>
       <button type="button" onclick="nextQuestion(2)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
@@ -213,41 +225,128 @@
 
     <!-- Question 4 -->
     <div class="question-slide" data-index="3">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 4 of 6</span>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 4 of 11</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">How much do you trust different sources when it comes to climate change?</h2>
+
+      <div class="w-full mb-8 space-y-4">
+
+        <!-- Scale labels -->
+        <div class="grid grid-cols-6 text-sm text-on-surface-variant mb-2">
+          <div></div>
+          <div class="text-center">Completely distrust</div>
+          <div class="text-center">Mostly distrust</div>
+          <div class="text-center">Neutral</div>
+          <div class="text-center">Mostly trust</div>
+          <div class="text-center">Completely trust</div>
+        </div>
+
+        <!-- Newspapers -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Newspapers</div>
+          <input type="radio" name="q3_newspapers" value="1">
+          <input type="radio" name="q3_newspapers" value="2">
+          <input type="radio" name="q3_newspapers" value="3">
+          <input type="radio" name="q3_newspapers" value="4">
+          <input type="radio" name="q3_newspapers" value="5">
+        </div>
+
+        <!-- Talk shows -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Talk shows</div>
+          <input type="radio" name="q3_talkshows" value="1">
+          <input type="radio" name="q3_talkshows" value="2">
+          <input type="radio" name="q3_talkshows" value="3">
+          <input type="radio" name="q3_talkshows" value="4">
+          <input type="radio" name="q3_talkshows" value="5">
+        </div>
+
+        <!-- Radio -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Radio</div>
+          <input type="radio" name="q3_radio" value="1">
+          <input type="radio" name="q3_radio" value="2">
+          <input type="radio" name="q3_radio" value="3">
+          <input type="radio" name="q3_radio" value="4">
+          <input type="radio" name="q3_radio" value="5">
+        </div>
+
+        <!-- Podcasts -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Podcasts</div>
+          <input type="radio" name="q3_podcasts" value="1">
+          <input type="radio" name="q3_podcasts" value="2">
+          <input type="radio" name="q3_podcasts" value="3">
+          <input type="radio" name="q3_podcasts" value="4">
+          <input type="radio" name="q3_podcasts" value="5">
+        </div>
+
+        <!-- Online news -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Online news</div>
+          <input type="radio" name="q3_onlinenews" value="1">
+          <input type="radio" name="q3_onlinenews" value="2">
+          <input type="radio" name="q3_onlinenews" value="3">
+          <input type="radio" name="q3_onlinenews" value="4">
+          <input type="radio" name="q3_onlinenews" value="5">
+        </div>
+
+        <!-- Social media -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Social media</div>
+          <input type="radio" name="q3_social" value="1">
+          <input type="radio" name="q3_social" value="2">
+          <input type="radio" name="q3_social" value="3">
+          <input type="radio" name="q3_social" value="4">
+          <input type="radio" name="q3_social" value="5">
+        </div>
+
+        <!-- Academic journals -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Academic journals</div>
+          <input type="radio" name="q3_academic" value="1">
+          <input type="radio" name="q3_academic" value="2">
+          <input type="radio" name="q3_academic" value="3">
+          <input type="radio" name="q3_academic" value="4">
+          <input type="radio" name="q3_academic" value="5">
+        </div>
+
+        <!-- Friends / family -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Friends / family</div>
+          <input type="radio" name="q3_friends" value="1">
+          <input type="radio" name="q3_friends" value="2">
+          <input type="radio" name="q3_friends" value="3">
+          <input type="radio" name="q3_friends" value="4">
+          <input type="radio" name="q3_friends" value="5">
+        </div>
+
+      </div>
+
+      <button type="button" onclick="nextQuestion(3)"
+        class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">
+        Next
+      </button>
+    </div>
+    
+    <!-- Question 5 -->
+    <div class="question-slide" data-index="4">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 5 of 11</span>
       <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">How confident are you in your ability to recognize climate misinformation?</h2>
       <div class="flex flex-col gap-3 w-full mb-8">
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q3" value="Very confident" class="accent-primary w-4 h-4 shrink-0"> Very confident
+          <input type="radio" name="q4" value="Very confident" class="accent-primary w-4 h-4 shrink-0"> Very confident
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q3" value="Somewhat confident" class="accent-primary w-4 h-4 shrink-0"> Somewhat confident
+          <input type="radio" name="q4" value="Somewhat confident" class="accent-primary w-4 h-4 shrink-0"> Somewhat confident
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q3" value="Neutral" class="accent-primary w-4 h-4 shrink-0"> Neutral
+          <input type="radio" name="q4" value="Neutral" class="accent-primary w-4 h-4 shrink-0"> Neutral
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q3" value="Not very confident" class="accent-primary w-4 h-4 shrink-0"> Not very confident
+          <input type="radio" name="q4" value="Not very confident" class="accent-primary w-4 h-4 shrink-0"> Not very confident
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q3" value="Not confident at all" class="accent-primary w-4 h-4 shrink-0"> Not confident at all
-        </label>
-      </div>
-      <button type="button" onclick="nextQuestion(3)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
-    </div>
-
-    <!-- Question 5 -->
-    <div class="question-slide" data-index="4">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 5 of 6</span>
-      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">Which of the following statements do you think is accurate?</h2>
-      <div class="flex flex-col gap-3 w-full mb-8">
-        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q4" value="97% scientists" class="accent-primary w-4 h-4 shrink-0"> "97% of climate scientists agree that climate change is mainly caused by human activity"
-        </label>
-        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q4" value="Volcanoes CO2" class="accent-primary w-4 h-4 shrink-0"> "Volcanoes emit more CO2 than human activity each year"
-        </label>
-        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q4" value="Natural cycle" class="accent-primary w-4 h-4 shrink-0"> "Climate change is only part of a natural cycle with no human influence"
+          <input type="radio" name="q4" value="Not confident at all" class="accent-primary w-4 h-4 shrink-0"> Not confident at all
         </label>
       </div>
       <button type="button" onclick="nextQuestion(4)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
@@ -255,36 +354,220 @@
 
     <!-- Question 6 -->
     <div class="question-slide" data-index="5">
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 6 of 6</span>
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 6 of 11</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">Which of the following statements do you think is accurate?</h2>
+      <div class="flex flex-col gap-3 w-full mb-8">
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q5" value="Volcanoes CO2" class="accent-primary w-4 h-4 shrink-0"> "Volcanoes, ocean circulation and solar radiation are responsible for more CO2 emissions than human activity each year"
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q5" value="Hurricanes" class="accent-primary w-4 h-4 shrink-0"> "Climate change causes more, but less intense hurricanes"
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q5" value="Ocean Heat" class="accent-primary w-4 h-4 shrink-0"> "Most of the extra heat from global warming is being stored in the deep ocean rather than the atmosphere."
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q5" value="China CO2 Emissions" class="accent-primary w-4 h-4 shrink-0"> "As China is the world's largest emitter, taking climate action in the EU is redundant"
+        </label>
+      </div>
+      <button type="button" onclick="nextQuestion(5)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
+    </div>
+
+     <!-- Question 7 -->
+    <div class="question-slide" data-index="6">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 7 of 11</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">In what tone do you experience climate change news typically being discussed?</h2>
+      <div class="flex flex-col gap-3 w-full mb-8">
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q6" value="Neutral / factual" class="accent-primary w-4 h-4 shrink-0"> Neutral / factual
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q6" value="Defeatist / hopeless" class="accent-primary w-4 h-4 shrink-0"> Defeatist / hopeless
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q6" value="Alarmist" class="accent-primary w-4 h-4 shrink-0"> Alarmist
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q6" value="Uncertain / probabilistic" class="accent-primary w-4 h-4 shrink-0"> Uncertain / probabilistic
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q6" value="Avoiding" class="accent-primary w-4 h-4 shrink-0"> Avoiding
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q6" value="Solution-oriented" class="accent-primary w-4 h-4 shrink-0"> Solution-oriented
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q6" value="Economically-focused" class="accent-primary w-4 h-4 shrink-0"> Economic-focused
+        </label>
+          <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q6" value="Denying of climate change" class="accent-primary w-4 h-4 shrink-0"> Downplaying, denying or sceptic of climate change
+        </label>
+      </div>
+      <button type="button" onclick="nextQuestion(6)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question-slide" data-index="7">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 8 of 11</span>
       <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">Who do you think is most responsible for preventing climate misinformation?</h2>
       <div class="flex flex-col gap-3 w-full mb-8">
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q5" value="Media organizations" class="accent-primary w-4 h-4 shrink-0"> Media organizations
+          <input type="radio" name="q7" value="Media organizations" class="accent-primary w-4 h-4 shrink-0"> Media organizations
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q5" value="Government / policy makers" class="accent-primary w-4 h-4 shrink-0"> Government / policy makers
+          <input type="radio" name="q7" value="Government / policy makers" class="accent-primary w-4 h-4 shrink-0"> Government / policy makers
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q5" value="Scientists" class="accent-primary w-4 h-4 shrink-0"> Scientists
+          <input type="radio" name="q7" value="Scientists" class="accent-primary w-4 h-4 shrink-0"> Scientists
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q5" value="Social media platforms" class="accent-primary w-4 h-4 shrink-0"> Social media platforms
+          <input type="radio" name="q7" value="Social media platforms" class="accent-primary w-4 h-4 shrink-0"> Social media platforms
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q5" value="Individual consumers" class="accent-primary w-4 h-4 shrink-0"> Individual consumers
+          <input type="radio" name="q7" value="Individual consumers" class="accent-primary w-4 h-4 shrink-0"> Individual consumers
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q5" value="No one / not sure" class="accent-primary w-4 h-4 shrink-0"> No one / not sure
+          <input type="radio" name="q7" value="No one / not sure" class="accent-primary w-4 h-4 shrink-0"> No one / not sure
         </label>
       </div>
-      <button type="button" onclick="nextQuestion(5)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Submit</button>
+      <button type="button" onclick="nextQuestion(7)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
+    </div>
+
+
+     <!-- Question 9 -->
+    <div class="question-slide" data-index="8">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 9 of 11</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">I think climate change coverage is covered well by the media I consume.</h2>
+      <div class="flex flex-col gap-3 w-full mb-8">
+         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q8" value="Strongly Disagree" class="accent-primary w-4 h-4 shrink-0"> Strongly Disagree
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q8" value="Disagree" class="accent-primary w-4 h-4 shrink-0"> Disagree
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q8" value="Neutral" class="accent-primary w-4 h-4 shrink-0"> Neutral
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q8" value="Agree" class="accent-primary w-4 h-4 shrink-0"> Agree
+        </label>
+        <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q8" value="Strongly Agree" class="accent-primary w-4 h-4 shrink-0"> Strongly Agree
+        </label>
+          <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
+          <input type="radio" name="q8" value="I don't consume news" class="accent-primary w-4 h-4 shrink-0"> I don't consume news
+        </label>
+      </div>
+      <button type="button" onclick="nextQuestion(8)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
+    </div>
+
+     <!-- Question 10-->
+    <div class="question-slide" data-index="9">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 10 of 11</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">What do you think about the frequency of climate change coverage and other related crises?</h2>
+
+      <div class="w-full mb-8 space-y-4">
+
+        <!-- Scale labels -->
+        <div class="grid grid-cols-6 text-sm text-on-surface-variant mb-2">
+          <div></div>
+          <div class="text-center">Covered not enough</div>
+          <div class="text-center">Adequately covered</div>
+          <div class="text-center">Covered too frequently</div>
+        </div>
+
+        <!-- Climate change coverage -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Climate change coverage</div>
+          <input type="radio" name="q9_climate" value="1">
+          <input type="radio" name="q9_climate" value="2">
+          <input type="radio" name="q9_climate" value="3">
+        </div>
+
+        <!-- Biodiversity coverage -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Biodiversity coverage</div>
+          <input type="radio" name="q9_biodiversity" value="1">
+          <input type="radio" name="q9_biodiversity" value="2">
+          <input type="radio" name="q9_biodiversity" value="3">
+        </div>
+
+        <!-- Resource crisis coverage -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Resource crisis coverage</div>
+          <input type="radio" name="q9_resource" value="1">
+          <input type="radio" name="q9_resource" value="2">
+          <input type="radio" name="q9_resource" value="3">
+        </div>
+
+      </div>
+
+      <button type="button" onclick="nextQuestion(9)"
+        class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next
+      </button>
+    </div>
+
+      <!-- Question 11 -->
+    <div class="question-slide" data-index="10">
+      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Question 11 of 11</span>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">Finally, what do you think about the frequency of the following ways to report on climate change in the media?</h2>
+
+      <div class="w-full mb-8 space-y-4">
+
+        <!-- Scale labels -->
+        <div class="grid grid-cols-6 text-sm text-on-surface-variant mb-2">
+          <div></div>
+          <div class="text-center">Covered not enough</div>
+          <div class="text-center">Adequately covered</div>
+          <div class="text-center">Covered too frequently</div>
+        </div>
+
+        <!-- Causes of climate change -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Causes of climate change</div>
+          <input type="radio" name="q10_causes" value="1">
+          <input type="radio" name="q10_causes" value="2">
+          <input type="radio" name="q10_causes" value="3">
+        </div>
+
+        <!-- Consequences of climate change -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Consequences of climate change (droughts, floods, etc.)</div>
+          <input type="radio" name="q10_consequences" value="1">
+          <input type="radio" name="q10_consequences" value="2">
+          <input type="radio" name="q10_consequences" value="3">
+        </div>
+
+        <!-- Solutions to climate change - mitigation -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Mitigation solutions to climate change (making changes to reduce emissions)</div>
+          <input type="radio" name="q10_mitigation" value="1">
+          <input type="radio" name="q10_mitigation" value="2">
+          <input type="radio" name="q10_mitigation" value="3">
+        </div>
+
+        <!-- Solutions to climate change - adaptation -->
+        <div class="grid grid-cols-6 items-center">
+          <div>Adaptation solutions to climate change (adjusting to the impacts of climate change)</div>
+          <input type="radio" name="q10_adaptation" value="1">
+          <input type="radio" name="q10_adaptation" value="2">
+          <input type="radio" name="q10_adaptation" value="3">
+        </div>
+
+      </div>
+
+      <button type="button" onclick="nextQuestion(10)"
+        class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">
+        Submit
+      </button>
     </div>
 
     <!-- Result screen -->
-    <div class="question-slide" data-index="6">
+    <div class="question-slide" data-index="10">
+      <div id="results" class="mt-6 text-left"></div>
       <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Complete</span>
       <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-6 text-center">Thanks for taking the quiz.</h2>
-      <p class="text-on-surface-variant text-lg text-center mb-10">Your results will appear here once the quiz is fully set up.</p>
+      <p class="text-on-surface-variant text-lg text-center mb-10"><button onclick="showResults()" class="underline text-primary">Click here to view your results of your finding the correct climate change claim question</button></p>
       <a href="index.html" class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-95 duration-200">Back to home</a>
     </div>
 
@@ -295,8 +578,37 @@
   const intro = document.querySelector('.intro-slide');
   const slides = document.querySelectorAll('.question-slide');
   const progressBar = document.getElementById('progress-bar');
-  const total = 6;
+  const total = 11;
 
+  const results = [];
+
+  const factCheck = {
+    q5: {
+      "Volcanoes CO2": {
+        correct: false,
+        explanation: "Volcanoes, ocean circulation and solar radiation are not responsible for more CO2 emissions than human activity each year. Scientific measurements and predictive models have shown time-and-time again that human activities, particularly the burning of fossil fuels and deforestation, are the primary drivers of the significant increase in atmospheric CO2 levels observed since the Industrial Revolution. This is a scientific consensus supported by over 90% of climate scientists. For extra information about this claim and a factchecking article about it, see this Flemish article: <a href=\"https://factcheck.vlaanderen/factcheck/huidige-klimaatverandering-veroorzaakt-door-mens-voormalig-weerman\" target=\"_blank\">https://factcheck.vlaanderen/factcheck/huidige-klimaatverandering-veroorzaakt-door-mens-voormalig-weerman</a>"
+      },
+      "Hurricanes": {
+        correct: false,
+        explanation: "Climate change doesn't seem to cause more hurricanes, but it does make them more intense (so the the claim made in the quiz is inaccurate and flipped around). Following multiple studies, the frequency of hurricanes is primarily linked towards the natural phenomenon called La Niña, which is a periodic cooling of the Pacific Ocean that can influence weather patterns globally. However, scientific evidence, also corraborated by the IPCC, shows that the intensity of hurricanes and duration of the hurricane season will increase. For more information about this and a factchecking article about it, see this Flemish article: <a href=\"https://factcheck.vlaanderen/factcheck/orkanen-niet-vaker-door-klimaatverandering-wel-intenser\" target=\"_blank\">https://factcheck.vlaanderen/factcheck/orkanen-niet-vaker-door-klimaatverandering-wel-intenser</a>"
+      },
+      "Ocean Heat": {
+        correct: true,
+        explanation: "Over 90% of excess heat from global warming is indeed stored in the ocean. However, this heat distribution significantly affects marine ecosystems, weather patterns and leads to rising sea levels. Thereby it can even be said oceans have protected the earth from even more severe warming. However, the capacity of storing heat in the oceans is not endless, which thereby still means action needs to be taken to reduce emissions and limit global warming. For more information about this and a factchecking article about it, see these factchecking articles by NASA and cleanet: <a href=\"https://science.nasa.gov/earth/explore/earth-indicators/ocean-warming/\" target=\"_blank\">https://science.nasa.gov/earth/explore/earth-indicators/ocean-warming/</a> and <a href=\"https://cleanet.org/clean/community/activities/myth_a.html\" target=\"_blank\">https://cleanet.org/clean/community/activities/myth_a.html</a>"
+      },
+      "China CO2 Emissions": {
+        correct: false,
+        explanation: "Although it is indeed true that China is a major emitter of CO2, climate responsibility is a global thing, where small players in the system can make big differences by initiating change. Thereby, EU action still matters significantly"
+      }
+    }
+  };
+
+  function linkify(text) {
+    return text.replace(
+      /<href>(.*?)<\/href>/g,
+      '<a href="$1" target="_blank" style="color:#0284c7; text-decoration:underline;">$1</a>'
+    );
+  }
   function startQuiz() {
     intro.style.opacity = '0';
     intro.style.pointerEvents = 'none';
@@ -307,22 +619,186 @@
   }
 
   function nextQuestion(currentIndex) {
-    const selected = document.querySelector(`input[name="q${currentIndex}"]:checked`);
-    if (!selected) return;
+    try {
 
-    const current = slides[currentIndex];
-    const next = slides[currentIndex + 1];
+      const validateSingle = (name) => {
+        return document.querySelector(`input[name="${name}"]:checked`);
+      };
 
-    current.style.opacity = '0';
-    current.style.pointerEvents = 'none';
+      const validateGroups = (groups) => {
+        for (let g of groups) {
+          if (!document.querySelector(`input[name="${g}"]:checked`)) return false;
+        }
+        return true;
+      };
 
-    setTimeout(() => {
-      current.classList.remove('active');
-      next.classList.add('active');
-      progressBar.style.width = ((currentIndex + 1) / total * 100) + '%';
-    }, 500);
+      // Q4 matrix
+      if (currentIndex === 3) {
+        const ok = validateGroups([
+          "q3_newspapers",
+          "q3_talkshows",
+          "q3_social",
+          "q3_friends",
+          "q3_onlinenews",
+          "q3_academic",
+          "q3_radio",
+          "q3_podcasts"
+        ]);
+        if (!ok) return;
+
+        results.push({
+          question: "q3_matrix",
+          newspapers: document.querySelector('input[name="q3_newspapers"]:checked')?.value,
+          talkshows: document.querySelector('input[name="q3_talkshows"]:checked')?.value,
+          social: document.querySelector('input[name="q3_social"]:checked')?.value,
+          friends: document.querySelector('input[name="q3_friends"]:checked')?.value,
+          onlinenews: document.querySelector('input[name="q3_onlinenews"]:checked')?.value,
+          academic: document.querySelector('input[name="q3_academic"]:checked')?.value,
+          radio: document.querySelector('input[name="q3_radio"]:checked')?.value,
+          podcasts: document.querySelector('input[name="q3_podcasts"]:checked')?.value,
+          timestamp: Date.now()
+        });
+      }
+
+      // Q10 matrix
+      else if (currentIndex === 9) {
+        const ok = validateGroups([
+          "q9_climate",
+          "q9_biodiversity",
+          "q9_resource"
+        ]);
+        if (!ok) return;
+
+        results.push({
+          question: "q9_matrix",
+          climate: document.querySelector('input[name="q9_climate"]:checked')?.value,
+          biodiversity: document.querySelector('input[name="q9_biodiversity"]:checked')?.value,
+          resource: document.querySelector('input[name="q9_resource"]:checked')?.value,
+          timestamp: Date.now()
+        });
+      }
+
+      // Q11 matrix
+      else if (currentIndex === 10) {
+        const ok = validateGroups([
+          "q10_causes",
+          "q10_consequences",
+          "q10_mitigation",
+          "q10_adaptation"
+        ]);
+        if (!ok) return;
+
+        results.push({
+          question: "q10_matrix",
+          causes: document.querySelector('input[name="q10_causes"]:checked')?.value,
+          consequences: document.querySelector('input[name="q10_consequences"]:checked')?.value,
+          mitigation: document.querySelector('input[name="q10_mitigation"]:checked')?.value,
+          adaptation: document.querySelector('input[name="q10_adaptation"]:checked')?.value,
+          timestamp: Date.now()
+        });
+      }
+
+      // Normal questions
+      else {
+        const selected = validateSingle(`q${currentIndex}`);
+        if (!selected) return;
+
+        results.push({
+          question: currentIndex,
+          answer: selected.value,
+          timestamp: Date.now()
+        });
+      }
+
+      // If last question → show results
+      if (currentIndex === slides.length - 1) {
+        showResults();
+        return;
+      }
+
+      const current = slides[currentIndex];
+      const next = slides[currentIndex + 1];
+
+      if (!current || !next) return;
+
+      current.style.opacity = '0';
+      current.style.pointerEvents = 'none';
+
+      setTimeout(() => {
+        current.classList.remove('active');
+        next.classList.add('active');
+        progressBar.style.width = ((currentIndex + 1) / total * 100) + '%';
+      }, 500);
+
+    } catch (e) {
+      console.warn('Quiz navigation error:', e);
+    }
+  }
+
+  function showResults() {
+    const box = document.getElementById("results");
+
+    if (!box) {
+      console.warn("Results container not found");
+      return;
+    }
+
+    const userAnswer = results.find(r => r.question === 5)?.answer;
+    const q5 = factCheck.q5;
+
+    if (!userAnswer) {
+      box.innerHTML = "<p>Something went wrong; no answer recorded.</p>";
+      return;
+    }
+
+    const userData = q5[userAnswer];
+
+    let html = "";
+
+    html += `
+      <p style="margin-bottom:20px;">
+        <strong>
+          ${userData.correct 
+            ? "Regarding picking the correct claim about climate change, you picked the right claim." 
+            : "Regarding picking the correct claim about climate change, you did not pick the right claim."}
+        </strong>
+      </p>
+    `;
+
+    html += `
+      <p style="margin-bottom:20px;">
+        Here are the fact-checked explanations for <strong>all answer options</strong>:
+      </p>
+    `;
+
+    for (const [option, data] of Object.entries(q5)) {
+      const isUserPick = option === userAnswer;
+
+      html += `
+        <div style="
+          margin-bottom:16px;
+          padding:14px;
+          border-radius:10px;
+          background:${isUserPick ? "#e0f2fe" : "#f9fafb"};
+          border:${isUserPick ? "2px solid #0284c7" : "1px solid #e5e7eb"};
+          text-align:left;
+        ">
+          <strong>${option}</strong>
+          ${isUserPick ? " ← your answer" : ""}
+          <br>
+          <span style="font-weight:600;">
+            ${data.correct ? "✔ Correct" : "✖ Incorrect"}
+          </span>
+          <br><br>
+          ${linkify(data.explanation)}
+        </div>
+      `;
+    }
+
+    box.innerHTML = html;
   }
 </script>
+
 
 </body>
 </html>
