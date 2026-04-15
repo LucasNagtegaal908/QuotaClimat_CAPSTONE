@@ -5,6 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Quiz | QuotaClimat</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <script id="tailwind-config">
@@ -93,6 +94,13 @@
       opacity: 1;
       pointer-events: auto;
       position: relative;
+    }
+    .result-screen {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0 4rem;
     }
   </style>
 </head>
@@ -205,19 +213,19 @@
       <h2 class="font-headline text-3xl md:text-4xl text-primary font-extrabold tracking-tighter leading-tight mb-8 text-center">How often do you encounter climate change topics in the media you consume?</h2>
       <div class="flex flex-col gap-3 w-full mb-8">
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q2" value="Very often" class="accent-primary w-4 h-4 shrink-0"> Never
+          <input type="radio" name="q2" value="Never" class="accent-primary w-4 h-4 shrink-0"> Never
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q2" value="Often" class="accent-primary w-4 h-4 shrink-0"> Rarely
+          <input type="radio" name="q2" value="Rarely" class="accent-primary w-4 h-4 shrink-0"> Rarely
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
           <input type="radio" name="q2" value="Sometimes" class="accent-primary w-4 h-4 shrink-0"> Sometimes
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q2" value="Rarely" class="accent-primary w-4 h-4 shrink-0"> Often
+          <input type="radio" name="q2" value="Often" class="accent-primary w-4 h-4 shrink-0"> Often
         </label>
         <label class="radio-option flex items-center gap-4 py-4 px-5 rounded-xl border-2 border-outline-variant cursor-pointer hover:border-primary transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30">
-          <input type="radio" name="q2" value="Never" class="accent-primary w-4 h-4 shrink-0"> Very often
+          <input type="radio" name="q2" value="Very often" class="accent-primary w-4 h-4 shrink-0"> Very often
         </label>
       </div>
       <button type="button" onclick="nextQuestion(2)" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all active:scale-95 duration-200">Next</button>
@@ -563,18 +571,32 @@
     </div>
 
     <!-- Result screen -->
-    <div class="question-slide" data-index="10">
-      <div id="results" class="mt-6 text-left"></div>
-      <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Complete</span>
-      <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-6 text-center">Thanks for taking the quiz.</h2>
-      <p class="text-on-surface-variant text-lg text-center mb-10"><button onclick="showResults()" class="underline text-primary">Click here to view your results of your finding the correct climate change claim question</button></p>
-      <a href="index.html" class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-95 duration-200">Back to home</a>
+    <div class="question-slide result-screen" data-index="11">
+      <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+
+        <!-- Left: completion message -->
+        <div class="flex flex-col items-start justify-center h-full pt-8">
+          <span class="text-primary font-medium tracking-widest uppercase text-xs mb-6 block">Complete</span>
+          <h2 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-8">Thanks for taking the quiz.</h2>
+          <a href="index.html" class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-95 duration-200">Back to home</a>
+        </div>
+
+        <!-- Right: fact-check results -->
+        <div id="results" class="text-left overflow-y-auto max-h-[70vh] pr-2"></div>
+
+      </div>
     </div>
 
   </div>
 </main>
 
 <script>
+  // Supabase credentials — replace with values from Project Settings → API
+  const SUPABASE_URL = 'https://tylrmsdrejcnypoqiuaa.supabase.co'
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR5bHJtc2RyZWpjbnlwb3FpdWFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyMzMxNTUsImV4cCI6MjA5MTgwOTE1NX0.0Y8f8L1lAQnvYZ8f68pBgGR9IrIPFf0u4Fmn2ufPd7Y'
+  const { createClient } = supabase
+  const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
   const intro = document.querySelector('.intro-slide');
   const slides = document.querySelectorAll('.question-slide');
   const progressBar = document.getElementById('progress-bar');
@@ -710,8 +732,8 @@
         });
       }
 
-      // If last question → show results
-      if (currentIndex === slides.length - 1) {
+      // If last question (index 10 = Q11) → show results
+      if (currentIndex === 10) {
         showResults();
         return;
       }
@@ -735,7 +757,43 @@
     }
   }
 
+  async function submitToSupabase() {
+    const factCheckAnswer = results.find(r => r.question === 5)?.answer
+    const q3 = results.find(r => r.question === 'q3_matrix')
+    const q9 = results.find(r => r.question === 'q9_matrix')
+    const q10 = results.find(r => r.question === 'q10_matrix')
+
+    const payload = {
+      q1_news_source: results.find(r => r.question === 0)?.answer,
+      q2_language: results.find(r => r.question === 1)?.answer,
+      q3_climate_frequency: results.find(r => r.question === 2)?.answer,
+      q4_trust_newspapers: q3?.newspapers ? parseInt(q3.newspapers) : null,
+      q4_trust_talkshows: q3?.talkshows ? parseInt(q3.talkshows) : null,
+      q4_trust_radio: q3?.radio ? parseInt(q3.radio) : null,
+      q4_trust_podcasts: q3?.podcasts ? parseInt(q3.podcasts) : null,
+      q4_trust_social: q3?.social ? parseInt(q3.social) : null,
+      q4_trust_friends: q3?.friends ? parseInt(q3.friends) : null,
+      q4_trust_onlinenews: q3?.onlinenews ? parseInt(q3.onlinenews) : null,
+      q4_trust_academic: q3?.academic ? parseInt(q3.academic) : null,
+      q9_fact_check: factCheckAnswer,
+      q9_correct: factCheckAnswer ? factCheck.q5[factCheckAnswer]?.correct ?? null : null,
+      q10_coverage_climate: q9?.climate,
+      q10_coverage_biodiversity: q9?.biodiversity,
+      q10_coverage_resource: q9?.resource,
+      q11_adequacy_causes: q10?.causes,
+      q11_adequacy_consequences: q10?.consequences,
+      q11_adequacy_mitigation: q10?.mitigation,
+      q11_adequacy_adaptation: q10?.adaptation,
+    }
+
+    const { error } = await supabaseClient.from('quiz_responses').insert(payload)
+    if (error) {
+      console.error('Supabase insert error:', error)
+    }
+  }
+
   function showResults() {
+    submitToSupabase() // fire and forget — don't await, don't block UI
     const box = document.getElementById("results");
 
     if (!box) {
@@ -796,6 +854,19 @@
     }
 
     box.innerHTML = html;
+
+    // Navigate to the result slide
+    const currentSlide = slides[10];
+    const resultSlide = slides[11];
+    if (currentSlide) {
+      currentSlide.style.opacity = '0';
+      currentSlide.style.pointerEvents = 'none';
+      setTimeout(() => {
+        currentSlide.classList.remove('active');
+        if (resultSlide) resultSlide.classList.add('active');
+        progressBar.style.width = '100%';
+      }, 500);
+    }
   }
 </script>
 
