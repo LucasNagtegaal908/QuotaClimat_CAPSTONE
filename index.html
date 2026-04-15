@@ -85,7 +85,8 @@
 <div class="font-['Newsreader'] font-bold text-2xl text-emerald-900 dark:text-emerald-50 tracking-tighter" style="">QuotaClimat</div>
 <div class="hidden md:flex gap-8 items-center">
 <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-900 dark:text-emerald-50 border-b-2 border-emerald-900 dark:border-emerald-50 pb-1 cursor-pointer active:scale-95 duration-200" href="index.html">Home</a>
-<a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 dark:text-emerald-200/60 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors cursor-pointer active:scale-95 duration-200" href="quiz">Quiz</a>
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 dark:text-emerald-200/60 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors cursor-pointer active:scale-95 duration-200" href="quiz.html">Quiz</a>
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 dark:text-emerald-200/60 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors cursor-pointer active:scale-95 duration-200" href="for_policymakers.html">For Policymakers</a>
 <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 dark:text-emerald-200/60 hover:text-emerald-900 dark:hover:text-emerald-50 transition-colors cursor-pointer active:scale-95 duration-200" href="#">Sources</a>
 </div>
 <a href="https://quotaclimat.org/en/actualites/mapping-climate-disinformation-in-french-and-brazilian-mainstream-media/" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-2 rounded-xl text-sm font-medium hover:bg-primary/90 transition-all cursor-pointer active:scale-95 duration-200">Methodology</a>
@@ -264,6 +265,9 @@ Wallonia
 <tr><td class="p-4">Misinformation Presence</td><td class="p-4">Moderate (energy & cost narratives)</td></tr>
 <tr><td class="p-4">Regulatory Context</td><td class="p-4">Strong public broadcasting standards</td></tr>
 <tr><td class="p-4">Scientific Coverage</td><td class="p-4">Frequently cited</td></tr>
+<tr><td class="p-4">Public service vs commercial media</td><td class="p-4">Public service dominates</td></tr>
+<tr><td class="p-4">Ownership</td><td class="p-4">Most channels are Flemish owned</td></tr>
+<tr><td class="p-4">Political and ideological affiliation</td><td class="p-4">Only one is clearly linked to being progressive, otherwise neutral</td></tr>
 </tbody>
 </table>
 </div>
@@ -279,14 +283,20 @@ flanders: [
 ["Climate Tone", "Mostly informative and more emotional"],
 ["Misinformation Presence", "Moderate (in opinionated broadcasts)"],
 ["Regulatory Context", "Unclear regulatory context"],
-["Scientific Coverage", "Frequently cited, but not outside news broadcasts"]
+["Scientific Coverage", "Frequently cited, but not outside news broadcasts"],
+["Public service vs commercial media", "Public service broadcasts dominate"],
+["Ownership", "Most channels are Flemish owned"],
+["Political and ideological affiliation", "Only one is clearly linked to being progressive, otherwise neutral"]
 ],
 wallonia: [
 ["Media Focus", "More political and informative framing"],
 ["Climate Tone", "Mostly informative and less emotional"],
 ["Misinformation Presence", "Lower but more polarised"],
 ["Regulatory Context", "Clear regulatory context"],
-["Scientific Coverage", "Less consistent citation"]
+["Scientific Coverage", "Less consistent citation"],
+["Public service vs commercial media", "Commercial media consumed more"],
+["Ownership", "Large number of foreign owned media"],
+["Political and ideological affiliation", "No clear association"]
 ]
 };
 
@@ -537,116 +547,7 @@ This visualisation shows how much misinformation appears over time and over diff
     box.classList.remove("hidden");
   }
 </script>
-<!-- Section: From Insight to Action -->
-<section class="py-32 px-8 md:px-24 bg-surface-container-low">
-<div class="max-w-6xl mx-auto space-y-20">
 
-<!-- Header -->
-<div class="text-center max-w-2xl mx-auto">
-<h2 class="font-headline text-4xl font-bold text-primary">From Insight to Action</h2>
-<p class="text-on-surface-variant mt-4 text-lg">
-How can the data be used practically and in a sustainable way? Here we outline pathways for policymakers and journalists to strengthen climate change media coverage in Flanders.
-(Note: this section has been partially AI-created for efficiency purposes (although the idea and direction it goes in is totally coming from us). For our final product the texts here will be more in-depth and handwritten by following research outcomes from our study (so this will certainly be replaced, but for now this is to show off our prototype idea)).
-</p>
-</div>
-
-<!-- GRID -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-<!-- LAWMAKERS -->
-<div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-primary space-y-6">
-<h3 class="font-headline text-2xl font-bold text-primary">For Policymakers</h3>
-
-<p class="text-on-surface-variant text-sm leading-relaxed">
-Use media analysis to design more effective climate communication strategies and regulatory frameworks.
-</p>
-
-<ul class="space-y-4 text-sm text-on-surface">
-
-<li class="flex gap-3">
-<span class="material-symbols-outlined text-primary">policy</span>
-<span>
-<strong>Strengthen media guidelines:</strong> Encourage balanced and evidence-based reporting through updated broadcasting standards.
-</span>
-</li>
-
-<li class="flex gap-3">
-<span class="material-symbols-outlined text-primary">groups</span>
-<span>
-<strong>Support public broadcasters:</strong> Invest in explanatory journalism and science communication.
-</span>
-</li>
-
-<li class="flex gap-3">
-<span class="material-symbols-outlined text-primary">gavel</span>
-<span>
-<strong>Align regulation across regions:</strong> Compare Flemish and Walloon frameworks to identify gaps and best practices.
-</span>
-</li>
-
-</ul>
-
-<div class="pt-4 border-t border-outline-variant text-xs text-outline">
-Prototype resources:
-<ul class="mt-2 space-y-1 underline">
-<li><a href="#">Coming in the future I suppose?</a></li>
-</ul>
-</div>
-</div>
-
-<!-- JOURNALISTS -->
-<div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-secondary space-y-6">
-<h3 class="font-headline text-2xl font-bold text-secondary">For Journalists</h3>
-
-<p class="text-on-surface-variant text-sm leading-relaxed">
-Leverage insights to improve accuracy, framing, and depth in climate reporting.
-</p>
-
-<ul class="space-y-4 text-sm text-on-surface">
-
-<li class="flex gap-3">
-<span class="material-symbols-outlined text-secondary">school</span>
-<span>
-<strong>Training & literacy:</strong> Develop newsroom training on climate science and data interpretation.
-</span>
-</li>
-
-<li class="flex gap-3">
-<span class="material-symbols-outlined text-secondary">fact_check</span>
-<span>
-<strong>Recognise misinformation patterns:</strong> Learn to recognise misinformation patterns in media and employ this knowledge in your work.
-</span>
-</li>
-
-<li class="flex gap-3">
-<span class="material-symbols-outlined text-secondary">balance</span>
-<span>
-<strong>Improve framing:</strong> Move beyond scaring narratives toward solution-oriented coverage.
-</span>
-</li>
-
-<li class="flex gap-3">
-<span class="material-symbols-outlined text-secondary">public</span>
-<span>
-<strong>Diversify sources:</strong> Include scientists, local voices, and affected communities.
-</span>
-</li>
-
-</ul>
-
-<div class="pt-4 border-t border-outline-variant text-xs text-outline">
-Prototype resources:
-<ul class="mt-2 space-y-1 underline">
-<li><a href="#">Coming I suppose</a></li>
-<li><a href="#">Workshops & training modules</a></li>
-</ul>
-</div>
-</div>
-
-</div>
-
-</div>
-</section>
 <!-- Conclusion Section -->
 <section class="py-32 px-8 md:px-24 bg-surface text-center">
 <div class="max-w-2xl mx-auto space-y-8">
