@@ -1,0 +1,30 @@
+{
+  "scatter_points": [],
+  "trust_averages": {
+    "newspapers": 4.0,
+    "talkshows": 2.71,
+    "radio": 3.43,
+    "podcasts": 3.29,
+    "social": 2.14,
+    "friends": 3.05,
+    "onlinenews": 3.43,
+    "academic": 4.43
+  },
+  "fact_check_stats": {
+    "Ocean Heat": 57.1,
+    "Volcanoes CO2": 23.8,
+    "Hurricanes": 9.5,
+    "China CO2 Emissions": 9.5
+  },
+  "news_source_stats": {
+    "Online news websites": 47.6,
+    "Social Media": 19.0,
+    "Friends / family": 14.3,
+    "Television": 4.8,
+    "I don't actively follow news": 4.8,
+    "Podcasts": 4.8,
+    "Radio": 4.8
+  },
+  "tone_stats": {},
+  "total_respondents": 21
+}

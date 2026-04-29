@@ -777,6 +777,8 @@
       q4_trust_friends: q3?.friends ? parseInt(q3.friends) : null,
       q4_trust_onlinenews: q3?.onlinenews ? parseInt(q3.onlinenews) : null,
       q4_trust_academic: q3?.academic ? parseInt(q3.academic) : null,
+      q5_confidence: results.find(r => r.question === 4)?.answer,
+      q7_tone: results.find(r => r.question === 6)?.answer,
       q9_fact_check: factCheckAnswer,
       q9_correct: factCheckAnswer ? factCheck.q5[factCheckAnswer]?.correct ?? null : null,
       q10_coverage_climate: q9?.climate,
@@ -794,81 +796,38 @@
     }
   }
 
-  function showResults() {
-    submitToSupabase() // fire and forget — don't await, don't block UI
-    const box = document.getElementById("results");
+  async function showResults() {
+    // Build URL params from the results array
+    const q3Matrix       = results.find(r => r.question === 'q3_matrix');
+    const factCheckAnswer = results.find(r => r.question === 5)?.answer;
 
-    if (!box) {
-      console.warn("Results container not found");
-      return;
+    const params = new URLSearchParams({
+      q1:           results.find(r => r.question === 0)?.answer  ?? '',
+      q2:           results.find(r => r.question === 1)?.answer  ?? '',
+      q3:           results.find(r => r.question === 2)?.answer  ?? '',
+      q4_newspapers: q3Matrix?.newspapers ?? '',
+      q4_talkshows:  q3Matrix?.talkshows  ?? '',
+      q4_radio:      q3Matrix?.radio      ?? '',
+      q4_podcasts:   q3Matrix?.podcasts   ?? '',
+      q4_social:     q3Matrix?.social     ?? '',
+      q4_friends:    q3Matrix?.friends    ?? '',
+      q4_onlinenews: q3Matrix?.onlinenews ?? '',
+      q4_academic:   q3Matrix?.academic   ?? '',
+      q5:           results.find(r => r.question === 4)?.answer  ?? '',
+      q6:           factCheckAnswer ?? '',
+      q6_correct:   String(factCheck.q5[factCheckAnswer]?.correct ?? false),
+      q7:           results.find(r => r.question === 6)?.answer  ?? '',
+    });
+
+    // Show a submitting state on the last question button
+    const lastSlide = slides[10];
+    if (lastSlide) {
+      const btn = lastSlide.querySelector('button');
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
     }
 
-    const userAnswer = results.find(r => r.question === 5)?.answer;
-    const q5 = factCheck.q5;
-
-    if (!userAnswer) {
-      box.innerHTML = "<p>Something went wrong; no answer recorded.</p>";
-      return;
-    }
-
-    const userData = q5[userAnswer];
-
-    let html = "";
-
-    html += `
-      <p style="margin-bottom:20px;">
-        <strong>
-          ${userData.correct 
-            ? "Regarding picking the correct claim about climate change, you picked the right claim." 
-            : "Regarding picking the correct claim about climate change, you did not pick the right claim."}
-        </strong>
-      </p>
-    `;
-
-    html += `
-      <p style="margin-bottom:20px;">
-        Here are the fact-checked explanations for <strong>all answer options</strong>:
-      </p>
-    `;
-
-    for (const [option, data] of Object.entries(q5)) {
-      const isUserPick = option === userAnswer;
-
-      html += `
-        <div style="
-          margin-bottom:16px;
-          padding:14px;
-          border-radius:10px;
-          background:${isUserPick ? "#e0f2fe" : "#f9fafb"};
-          border:${isUserPick ? "2px solid #0284c7" : "1px solid #e5e7eb"};
-          text-align:left;
-        ">
-          <strong>${option}</strong>
-          ${isUserPick ? " ← your answer" : ""}
-          <br>
-          <span style="font-weight:600;">
-            ${data.correct ? "✔ Correct" : "✖ Incorrect"}
-          </span>
-          <br><br>
-          ${linkify(data.explanation)}
-        </div>
-      `;
-    }
-
-    box.innerHTML = html;
-
-    // Navigate to the result slide
-    const currentSlide = slides[10];
-    const resultSlide = slides[11];
-    if (currentSlide) {
-      currentSlide.style.opacity = '0';
-      currentSlide.style.pointerEvents = 'none';
-      setTimeout(() => {
-        currentSlide.classList.remove('active');
-        if (resultSlide) resultSlide.classList.add('active');
-        progressBar.style.width = '100%';
-      }, 500);
-    }
+    await submitToSupabase();
+    window.location.href = `results.html?${params.toString()}`;
   }
 </script>
 
