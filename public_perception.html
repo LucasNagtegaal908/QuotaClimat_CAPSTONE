@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Your Results | QuotaClimat</title>
+  <title>Public Perception | QuotaClimat</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -85,6 +85,8 @@
       color: #717973;
       font-size: 0.875rem;
       font-family: 'Work Sans', sans-serif;
+      text-align: center;
+      padding: 2rem;
     }
   </style>
 </head>
@@ -97,7 +99,7 @@
     <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="index.html">Home</a>
     <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="quiz.html">Quiz</a>
     <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="for_policymakers.html">For Policymakers</a>
-    <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="public_perception.html">Perception</a>
+    <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-900 border-b-2 border-emerald-900 pb-1 cursor-pointer active:scale-95 duration-200" href="public_perception.html">Perception</a>
     <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="#">Sources</a>
   </div>
   <a href="https://quotaclimat.org/en/actualites/mapping-climate-disinformation-in-french-and-brazilian-mainstream-media/" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-2 rounded-xl text-sm font-medium hover:bg-primary/90 transition-all cursor-pointer active:scale-95 duration-200">Methodology</a>
@@ -108,40 +110,46 @@
   <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
   <header class="py-20 px-8 md:px-24 bg-surface">
     <div class="max-w-4xl">
-      <span class="text-secondary font-medium tracking-widest uppercase text-xs mb-4 block">Your Results</span>
+      <span class="text-secondary font-medium tracking-widest uppercase text-xs mb-4 block">Aggregate Results</span>
       <h1 class="font-headline text-5xl md:text-6xl text-primary font-extrabold tracking-tighter leading-tight mb-6">
-        Where do you sit in the climate <span class="newsreader-italic font-normal">media landscape?</span>
+        How respondents perceive <span class="newsreader-italic font-normal">climate media.</span>
       </h1>
       <p class="text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
-        Based on your answers, here's how your media consumption and awareness of misinformation compare to all other respondents.
+        Aggregated results from everyone who has taken the quiz. No individual data — only the collective picture.
       </p>
     </div>
   </header>
 
-  <!-- ── Landscape Card ────────────────────────────────────────────────────── -->
+  <!-- ── Summary Stats ─────────────────────────────────────────────────────── -->
   <section class="px-8 md:px-24 pb-16 bg-surface">
-    <div class="max-w-4xl">
-      <div class="bg-surface-container rounded-2xl p-8 border-l-4 border-secondary">
-        <p class="text-xs font-medium tracking-widest uppercase text-secondary mb-6">Your Position</p>
-        <div class="space-y-2 mb-6">
-          <p id="exposure-line" class="text-lg font-semibold text-primary"></p>
-          <p id="calibration-line" class="text-lg font-semibold text-primary"></p>
-        </div>
-        <p id="context-line" class="text-on-surface-variant leading-relaxed italic text-sm">
-          Loading population data…
-        </p>
+    <div class="max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-4" id="stats-grid">
+      <div class="bg-surface-container rounded-xl p-6">
+        <p class="text-xs font-medium tracking-widest uppercase text-secondary mb-2">Respondents</p>
+        <p id="stat-total" class="font-headline text-4xl font-bold text-primary">—</p>
+      </div>
+      <div class="bg-surface-container rounded-xl p-6">
+        <p class="text-xs font-medium tracking-widest uppercase text-secondary mb-2">Fact check correct</p>
+        <p id="stat-correct" class="font-headline text-4xl font-bold text-primary">—</p>
+      </div>
+      <div class="bg-surface-container rounded-xl p-6">
+        <p class="text-xs font-medium tracking-widest uppercase text-secondary mb-2">Top news source</p>
+        <p id="stat-source" class="font-headline text-xl font-bold text-primary leading-tight mt-1">—</p>
+      </div>
+      <div class="bg-surface-container rounded-xl p-6">
+        <p class="text-xs font-medium tracking-widest uppercase text-secondary mb-2">Most felt tone</p>
+        <p id="stat-tone" class="font-headline text-xl font-bold text-primary leading-tight mt-1">—</p>
       </div>
     </div>
   </section>
 
-  <!-- ── Chart 1: Landscape Scatter ────────────────────────────────────────── -->
+  <!-- ── Chart 1: Landscape Scatter (population only) ──────────────────────── -->
   <section class="py-16 px-8 md:px-24 bg-surface-container-low">
     <div class="max-w-4xl mx-auto">
       <p class="text-xs font-medium tracking-widest uppercase text-secondary mb-3">Chart 1 of 5</p>
-      <h2 class="font-headline text-3xl font-bold text-primary mb-4">The Landscape</h2>
+      <h2 class="font-headline text-3xl font-bold text-primary mb-4">The Misinformation Landscape</h2>
       <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">
-        Each dot below represents one person who took this quiz. Your position is highlighted.
-        Notice where clusters form — the pattern matters more than any individual position.
+        Each dot is one respondent, plotted by how often they encounter climate news (exposure)
+        and how well their confidence in spotting misinformation matched their actual accuracy (calibration).
       </p>
       <div class="bg-white rounded-2xl shadow-sm p-2">
         <div id="scatter_landscape" style="height: 540px;">
@@ -151,14 +159,13 @@
     </div>
   </section>
 
-  <!-- ── Chart 2: Trust Radar ───────────────────────────────────────────────── -->
+  <!-- ── Chart 2: Trust Radar (population average only) ───────────────────── -->
   <section class="py-16 px-8 md:px-24 bg-surface">
     <div class="max-w-4xl mx-auto">
       <p class="text-xs font-medium tracking-widest uppercase text-secondary mb-3">Chart 2 of 5</p>
-      <h2 class="font-headline text-3xl font-bold text-primary mb-4">Your Trust Profile</h2>
+      <h2 class="font-headline text-3xl font-bold text-primary mb-4">Average Trust in News Sources</h2>
       <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">
-        How much people trust different news sources varies widely.
-        Your trust profile is overlaid on the population average.
+        How much respondents trust each type of news source on average, rated 1 (complete distrust) to 5 (complete trust).
       </p>
       <div class="bg-white rounded-2xl shadow-sm p-2">
         <div id="trust_radar" style="height: 540px;">
@@ -174,15 +181,11 @@
       <p class="text-xs font-medium tracking-widest uppercase text-secondary mb-3">Chart 3 of 5</p>
       <h2 class="font-headline text-3xl font-bold text-primary mb-4">Where People Get Their Climate News</h2>
       <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">
-        Climate news reaches people through very different channels.
-        Your primary source is noted in the callout below.
+        Distribution of primary news sources across all respondents.
       </p>
       <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
         <iframe src="charts/chart_news_source.html" width="100%" height="460" frameborder="0"
           title="News source distribution" loading="lazy"></iframe>
-      </div>
-      <div id="callout-3" class="mt-4 p-5 bg-white rounded-xl border border-outline-variant text-on-surface-variant text-sm leading-relaxed">
-        Loading…
       </div>
     </div>
   </section>
@@ -193,15 +196,12 @@
       <p class="text-xs font-medium tracking-widest uppercase text-secondary mb-3">Chart 4 of 5</p>
       <h2 class="font-headline text-3xl font-bold text-primary mb-4">The Fact Check</h2>
       <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">
-        We asked all respondents which of four statements about climate science is accurate.
-        Here's how the answers split.
+        Which of four climate statements respondents identified as accurate.
+        The correct answer is <strong class="text-primary">Ocean Heat</strong>.
       </p>
       <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
         <iframe src="charts/chart_fact_check.html" width="100%" height="460" frameborder="0"
           title="Fact check results" loading="lazy"></iframe>
-      </div>
-      <div id="callout-4" class="mt-4 p-5 bg-white rounded-xl border border-outline-variant text-on-surface-variant text-sm leading-relaxed">
-        Loading…
       </div>
     </div>
   </section>
@@ -212,14 +212,11 @@
       <p class="text-xs font-medium tracking-widest uppercase text-secondary mb-3">Chart 5 of 5</p>
       <h2 class="font-headline text-3xl font-bold text-primary mb-4">Perceived Tone of Climate Coverage</h2>
       <p class="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">
-        How people experience the tone of climate coverage shapes how they engage with the topic.
+        How respondents describe the tone of climate coverage in the media they consume.
       </p>
       <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
         <iframe src="charts/chart_tone_perception.html" width="100%" height="460" frameborder="0"
           title="Tone perception" loading="lazy"></iframe>
-      </div>
-      <div id="callout-5" class="mt-4 p-5 bg-white rounded-xl border border-outline-variant text-on-surface-variant text-sm leading-relaxed">
-        Loading…
       </div>
     </div>
   </section>
@@ -258,72 +255,54 @@
 (function () {
   'use strict';
 
-  // ── Parse URL params ────────────────────────────────────────────────────────
-  const params = new URLSearchParams(window.location.search);
-
-  // ── Exposure axis ───────────────────────────────────────────────────────────
-  const EXPOSURE_MAP = { 'Never': 0, 'Rarely': 1, 'Sometimes': 2, 'Often': 3, 'Very often': 4 };
-  const CONFIDENCE_MAP = {
-    'Not confident at all': 1, 'Not very confident': 2,
-    'Neutral': 3, 'Somewhat confident': 4, 'Very confident': 5,
-  };
-
-  const q3Val      = params.get('q3') || '';
-  const q5Val      = params.get('q5') || '';
-  const q6Correct  = params.get('q6_correct') === 'true';
-  const q6Answer   = params.get('q6') || '';
-  const q1Val      = params.get('q1') || '';
-  const q7Val      = params.get('q7') || '';
-
-  const exposureScore = EXPOSURE_MAP[q3Val] ?? 2;
-  const exposureLabel = exposureScore <= 1 ? 'low' : exposureScore <= 3 ? 'moderate' : 'high';
-  const confidence    = CONFIDENCE_MAP[q5Val] ?? 3;
-  const correct       = q6Correct ? 1 : 0;
-  const calibGap      = confidence - (correct * 5);
-  const calibLabel    =
-    Math.abs(calibGap) <= 1 ? 'well-calibrated' :
-    calibGap > 0 ? 'overconfident relative to your accuracy' :
-    'more accurate than your confidence suggested';
-
-  // ── Render landscape card (synchronous — no fetch needed) ──────────────────
-  const expLine  = document.getElementById('exposure-line');
-  const calLine  = document.getElementById('calibration-line');
-  if (expLine) expLine.textContent =
-    `Your exposure: ${exposureLabel} — you encounter climate news ${q3Val.toLowerCase() || '—'}.`;
-  if (calLine) calLine.textContent = `Your calibration: ${calibLabel}.`;
-
-  // ── Fetch population data, then render charts + callouts ───────────────────
   fetch('charts/population_data.json')
     .then(function (r) {
       if (!r.ok) throw new Error('population_data.json not found');
       return r.json();
     })
     .then(function (data) {
+      renderStats(data);
       renderScatter(data);
       renderRadar(data);
-      updateCallouts(data);
-      updateContextLine(data);
     })
     .catch(function (err) {
       console.warn('Could not load population data:', err);
       ['scatter_landscape', 'trust_radar'].forEach(function (id) {
         var el = document.getElementById(id);
         if (el) el.innerHTML =
-          '<div class="chart-placeholder" style="padding:2rem; text-align:center;">' +
-          'Chart data not yet available.<br>Run <code>generate_charts.py</code> to populate.' +
-          '</div>';
-      });
-      ['callout-3', 'callout-4', 'callout-5', 'context-line'].forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el) el.textContent = '';
+          '<div class="chart-placeholder">Chart data not yet available.<br>' +
+          'Run <code>generate_charts.py</code> to populate.</div>';
       });
     });
 
-  // ── Chart 1: Landscape Scatter ─────────────────────────────────────────────
+  // ── Summary stat cards ─────────────────────────────────────────────────────
+  function renderStats(data) {
+    var total = data.total_respondents || 0;
+    document.getElementById('stat-total').textContent = total;
+
+    var correctPct = data.fact_check_stats && data.fact_check_stats['Ocean Heat'];
+    document.getElementById('stat-correct').textContent =
+      correctPct != null ? correctPct + '%' : '—';
+
+    var topSource = topKey(data.news_source_stats);
+    document.getElementById('stat-source').textContent = topSource || '—';
+
+    var topTone = topKey(data.tone_stats);
+    document.getElementById('stat-tone').textContent = topTone || '—';
+  }
+
+  function topKey(obj) {
+    if (!obj) return null;
+    var keys = Object.keys(obj);
+    if (!keys.length) return null;
+    return keys.reduce(function (a, b) { return obj[a] >= obj[b] ? a : b; });
+  }
+
+  // ── Chart 1: Scatter (population only) ────────────────────────────────────
   function renderScatter(data) {
     var pts = data.scatter_points || [];
 
-    var trace1 = {
+    var trace = {
       type: 'scatter',
       mode: 'markers',
       x: pts.map(function (p) { return p.exposure; }),
@@ -333,32 +312,13 @@
         size: 9,
         line: { color: 'rgba(63, 102, 83, 0.7)', width: 1 },
       },
-      name: 'All respondents',
-      hovertemplate: 'Exposure: %{x:.1f}<br>Calibration gap: %{y:.1f}<extra>All respondents</extra>',
-    };
-
-    var userCalib = calibGap;
-    var trace2 = {
-      type: 'scatter',
-      mode: 'markers+text',
-      x: [exposureScore],
-      y: [userCalib],
-      marker: {
-        color: '#e8613a',
-        size: 16,
-        symbol: 'star',
-        line: { color: '#ffffff', width: 2 },
-      },
-      text: ['You'],
-      textposition: 'top center',
-      textfont: { color: '#e8613a', size: 12, family: 'Work Sans, sans-serif' },
-      name: 'You',
-      hovertemplate: 'You<br>Exposure: %{x}<br>Calibration gap: %{y}<extra></extra>',
+      name: 'Respondents',
+      hovertemplate: 'Exposure: %{x:.1f}<br>Calibration gap: %{y:.1f}<extra></extra>',
     };
 
     var layout = {
       title: {
-        text: 'Where do you sit in the misinformation landscape?',
+        text: 'Exposure vs. Calibration gap across all respondents',
         font: { family: 'Newsreader, serif', size: 18, color: '#012d1d' },
         x: 0,
       },
@@ -370,7 +330,7 @@
         tickvals: [0, 1, 2, 3, 4],
       },
       yaxis: {
-        title: 'Calibration gap',
+        title: 'Calibration gap  (+ = overconfident, − = underconfident)',
         range: [-5.5, 6.5],
         gridcolor: '#e1e3e4',
         zeroline: true,
@@ -381,20 +341,12 @@
       plot_bgcolor: '#f8f9fa',
       font: { family: 'Work Sans, sans-serif', color: '#191c1d', size: 12 },
       margin: { l: 60, r: 40, t: 70, b: 60 },
-      legend: { x: 0.01, y: 0.99, bgcolor: 'rgba(255,255,255,0.85)',
-                bordercolor: '#e1e3e4', borderwidth: 1 },
+      showlegend: false,
       annotations: [
-        _quadLabel(4.5, 6,   'High exposure,<br>overconfident',      'right'),
-        _quadLabel(-0.5, 6,  'Low exposure,<br>overconfident',       'left'),
-        _quadLabel(4.5, -5,  'High exposure,<br>well-calibrated',    'right'),
-        _quadLabel(-0.5, -5, 'Low exposure,<br>well-calibrated',     'left'),
-        {
-          text: 'Each dot is one respondent. Your position is shown as a star.',
-          x: 0.5, y: -0.12, xref: 'paper', yref: 'paper',
-          showarrow: false,
-          font: { size: 11, color: '#717973', family: 'Work Sans, sans-serif' },
-          xanchor: 'center',
-        },
+        _q('High exposure,<br>overconfident',    4.5,  6,   'right'),
+        _q('Low exposure,<br>overconfident',    -0.5,  6,   'left'),
+        _q('High exposure,<br>well-calibrated',  4.5, -5,   'right'),
+        _q('Low exposure,<br>well-calibrated',  -0.5, -5,   'left'),
       ],
       shapes: [
         { type: 'line', x0: 2, x1: 2, y0: -5.5, y1: 6.5,
@@ -404,10 +356,10 @@
       ],
     };
 
-    Plotly.newPlot('scatter_landscape', [trace1, trace2], layout, { responsive: true });
+    Plotly.newPlot('scatter_landscape', [trace], layout, { responsive: true });
   }
 
-  function _quadLabel(x, y, text, anchor) {
+  function _q(text, x, y, anchor) {
     return {
       x: x, y: y, text: text, showarrow: false,
       font: { size: 10, color: '#a0a8a3', family: 'Work Sans, sans-serif' },
@@ -415,47 +367,28 @@
     };
   }
 
-  // ── Chart 2: Trust Radar ───────────────────────────────────────────────────
+  // ── Chart 2: Radar (population average only) ──────────────────────────────
   function renderRadar(data) {
     var avg  = data.trust_averages || {};
     var cats = ['Newspapers', 'Talk shows', 'Radio', 'Podcasts',
                 'Social media', 'Friends/family', 'Online news', 'Academic journals'];
     var keys = ['newspapers', 'talkshows', 'radio', 'podcasts',
                 'social', 'friends', 'onlinenews', 'academic'];
-    var paramKeys = ['q4_newspapers', 'q4_talkshows', 'q4_radio', 'q4_podcasts',
-                     'q4_social', 'q4_friends', 'q4_onlinenews', 'q4_academic'];
 
-    var avgVals  = keys.map(function (k) { return avg[k] != null ? avg[k] : 3; });
-    var userVals = paramKeys.map(function (k) {
-      var v = parseFloat(params.get(k));
-      return isNaN(v) ? 3 : v;
-    });
+    var vals = keys.map(function (k) { return avg[k] != null ? avg[k] : 3; });
+    var closedCats = cats.concat([cats[0]]);
+    var closedVals = vals.concat([vals[0]]);
 
-    // Close the polygon
-    var closedCats     = cats.concat([cats[0]]);
-    var closedAvgVals  = avgVals.concat([avgVals[0]]);
-    var closedUserVals = userVals.concat([userVals[0]]);
-
-    var trace1 = {
+    var trace = {
       type: 'scatterpolar',
-      r: closedAvgVals,
+      r: closedVals,
       theta: closedCats,
       fill: 'toself',
-      fillcolor: 'rgba(63, 102, 83, 0.2)',
-      line: { color: '#3f6653', width: 2 },
-      name: 'All respondents (avg)',
-      hovertemplate: '%{theta}: %{r:.1f}<extra>Population avg</extra>',
-    };
-
-    var trace2 = {
-      type: 'scatterpolar',
-      r: closedUserVals,
-      theta: closedCats,
-      fill: 'none',
-      line: { color: '#00c896', width: 2.5 },
-      marker: { color: '#00c896', size: 7 },
-      name: 'You',
-      hovertemplate: '%{theta}: %{r}<extra>You</extra>',
+      fillcolor: 'rgba(63, 102, 83, 0.25)',
+      line: { color: '#3f6653', width: 2.5 },
+      marker: { color: '#3f6653', size: 6 },
+      name: 'Population average',
+      hovertemplate: '%{theta}: %{r:.2f}<extra>Population avg</extra>',
     };
 
     var layout = {
@@ -472,67 +405,16 @@
       },
       paper_bgcolor: '#ffffff',
       font: { family: 'Work Sans, sans-serif', color: '#191c1d', size: 12 },
-      showlegend: true,
-      legend: { x: 1.05, y: 0.5, bgcolor: 'rgba(255,255,255,0.85)',
-                bordercolor: '#e1e3e4', borderwidth: 1 },
+      showlegend: false,
       title: {
-        text: 'How do you trust news sources compared to everyone else?',
+        text: 'Average trust in news sources (1–5 scale)',
         font: { family: 'Newsreader, serif', size: 18, color: '#012d1d' },
         x: 0,
       },
-      margin: { l: 60, r: 120, t: 80, b: 60 },
+      margin: { l: 60, r: 60, t: 80, b: 60 },
     };
 
-    Plotly.newPlot('trust_radar', [trace1, trace2], layout, { responsive: true });
-  }
-
-  // ── Update callout text blocks ─────────────────────────────────────────────
-  function updateCallouts(data) {
-    // Callout 3 — news source
-    var newsPct = data.news_source_stats && data.news_source_stats[q1Val];
-    var c3 = document.getElementById('callout-3');
-    if (c3) {
-      c3.textContent = q1Val
-        ? 'You primarily consume news via "' + q1Val + '". ' +
-          (newsPct != null ? newsPct + '% of respondents said the same.' : '')
-        : '';
-    }
-
-    // Callout 4 — fact check
-    var factPct = data.fact_check_stats && data.fact_check_stats[q6Answer];
-    var c4 = document.getElementById('callout-4');
-    if (c4) {
-      if (q6Correct) {
-        c4.textContent = 'You identified the correct answer (Ocean Heat). ' +
-          (factPct != null ? factPct + '% of respondents did too.' : '');
-      } else {
-        c4.textContent = 'You chose "' + q6Answer + '". ' +
-          (factPct != null ? factPct + '% of respondents made the same choice. ' : '') +
-          'The correct answer was: Ocean Heat.';
-      }
-    }
-
-    // Callout 5 — tone
-    var tonePct = data.tone_stats && data.tone_stats[q7Val];
-    var c5 = document.getElementById('callout-5');
-    if (c5) {
-      c5.textContent = q7Val
-        ? 'You experience climate news as "' + q7Val + '". ' +
-          (tonePct != null ? tonePct + '% of respondents agreed.' : '')
-        : '';
-    }
-  }
-
-  // ── Update the landscape card context line (needs population data) ─────────
-  function updateContextLine(data) {
-    var ctxEl  = document.getElementById('context-line');
-    if (!ctxEl) return;
-    var factPct = data.fact_check_stats && data.fact_check_stats[q6Answer];
-    var pctStr  = factPct != null ? factPct + '% of respondents' : 'Many respondents';
-    var outcome = q6Correct ? 'identified the correct answer' : 'chose an incorrect answer';
-    ctxEl.textContent =
-      'Like ' + pctStr + ', you ' + outcome + ' on the fact-check question' +
-      (q5Val ? ' — despite rating your confidence as "' + q5Val + '".' : '.');
+    Plotly.newPlot('trust_radar', [trace], layout, { responsive: true });
   }
 
 })();
