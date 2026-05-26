@@ -24,40 +24,45 @@
       "exposure": 3.888,
       "calibration_gap": -2.015,
       "q1": "Friends / family"
+    },
+    {
+      "exposure": 1.961,
+      "calibration_gap": -2.872,
+      "q1": "Social Media"
     }
   ],
   "trust_averages": {
-    "newspapers": 3.85,
-    "talkshows": 2.69,
-    "radio": 3.35,
-    "podcasts": 3.27,
-    "social": 2.27,
-    "friends": 3.08,
-    "onlinenews": 3.35,
-    "academic": 4.23
+    "newspapers": 3.78,
+    "talkshows": 2.7,
+    "radio": 3.33,
+    "podcasts": 3.26,
+    "social": 2.26,
+    "friends": 3.07,
+    "onlinenews": 3.33,
+    "academic": 4.22
   },
   "fact_check_stats": {
-    "Ocean Heat": 61.5,
-    "Volcanoes CO2": 19.2,
-    "Hurricanes": 11.5,
-    "China CO2 Emissions": 7.7
+    "Ocean Heat": 63.0,
+    "Volcanoes CO2": 18.5,
+    "Hurricanes": 11.1,
+    "China CO2 Emissions": 7.4
   },
   "news_source_stats": {
-    "Online news websites": 42.3,
-    "Friends / family": 15.4,
-    "Social Media": 15.4,
-    "I don't actively follow news": 7.7,
-    "Podcasts": 7.7,
-    "Television": 3.8,
-    "Radio": 3.8,
-    "Academic journals": 3.8
+    "Online news websites": 40.7,
+    "Social Media": 18.5,
+    "Friends / family": 14.8,
+    "I don't actively follow news": 7.4,
+    "Podcasts": 7.4,
+    "Television": 3.7,
+    "Radio": 3.7,
+    "Academic journals": 3.7
   },
   "tone_stats": {
-    "Solution-oriented": 20.0,
-    "Uncertain / probabilistic": 20.0,
-    "Avoiding": 20.0,
-    "Neutral / factual": 20.0,
-    "Economically-focused": 20.0
+    "Economically-focused": 33.3,
+    "Solution-oriented": 16.7,
+    "Uncertain / probabilistic": 16.7,
+    "Avoiding": 16.7,
+    "Neutral / factual": 16.7
   },
-  "total_respondents": 26
+  "total_respondents": 27
 }
