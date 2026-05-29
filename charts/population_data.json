@@ -39,42 +39,47 @@
       "exposure": 1.983,
       "calibration_gap": -1.082,
       "q1": "Radio"
+    },
+    {
+      "exposure": 3.016,
+      "calibration_gap": 4.869,
+      "q1": "Radio"
     }
   ],
   "trust_averages": {
-    "newspapers": 3.79,
-    "talkshows": 2.62,
-    "radio": 3.34,
-    "podcasts": 3.21,
-    "social": 2.24,
-    "friends": 3.14,
-    "onlinenews": 3.31,
-    "academic": 4.24
+    "newspapers": 3.77,
+    "talkshows": 2.63,
+    "radio": 3.4,
+    "podcasts": 3.23,
+    "social": 2.3,
+    "friends": 3.2,
+    "onlinenews": 3.33,
+    "academic": 4.27
   },
   "fact_check_stats": {
-    "Ocean Heat": 62.1,
-    "Volcanoes CO2": 17.2,
-    "Hurricanes": 10.3,
-    "China CO2 Emissions": 10.3
+    "Ocean Heat": 60.0,
+    "Volcanoes CO2": 16.7,
+    "China CO2 Emissions": 13.3,
+    "Hurricanes": 10.0
   },
   "news_source_stats": {
-    "Online news websites": 37.9,
-    "Social Media": 17.2,
-    "Friends / family": 13.8,
-    "Podcasts": 10.3,
-    "I don't actively follow news": 6.9,
-    "Radio": 6.9,
-    "Television": 3.4,
-    "Academic journals": 3.4
+    "Online news websites": 36.7,
+    "Social Media": 16.7,
+    "Friends / family": 13.3,
+    "Podcasts": 10.0,
+    "Radio": 10.0,
+    "I don't actively follow news": 6.7,
+    "Television": 3.3,
+    "Academic journals": 3.3
   },
   "tone_stats": {
-    "Economically-focused": 25.0,
-    "Solution-oriented": 12.5,
-    "Uncertain / probabilistic": 12.5,
-    "Avoiding": 12.5,
-    "Neutral / factual": 12.5,
-    "Denying of climate change": 12.5,
-    "Defeatist / hopeless": 12.5
+    "Uncertain / probabilistic": 22.2,
+    "Economically-focused": 22.2,
+    "Solution-oriented": 11.1,
+    "Avoiding": 11.1,
+    "Neutral / factual": 11.1,
+    "Denying of climate change": 11.1,
+    "Defeatist / hopeless": 11.1
   },
-  "total_respondents": 29
+  "total_respondents": 30
 }
