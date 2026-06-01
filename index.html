@@ -77,6 +77,10 @@
       }
       .newsreader-italic { font-family: 'Newsreader'; font-style: italic; }
       .glass-effect { backdrop-filter: blur(16px); }
+      .cta-pop { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+      .cta-pop:hover { transform: translateY(-4px); box-shadow: 0px 32px 72px rgba(1,45,29,0.34); }
+      .cta-arrow { transition: transform 0.3s ease; }
+      .cta-pop:hover .cta-arrow { transform: translateX(10px); }
     </style>
 <style>
 
@@ -86,7 +90,7 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 8px;
+    width: 12px;
     z-index: 1000;
     pointer-events: none;
   }
@@ -103,9 +107,9 @@
   }
   .progress-marker {
     position: absolute;
-    left: -8px;
-    width: 24px;
-    height: 24px;
+    left: -12px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: 2px solid #2b694d;
     background: #ffffff;
@@ -150,7 +154,7 @@
     align-items: center;
     gap: 2rem;
   }
-  .hero-left { flex: 1; max-width: 50%; }
+  .hero-left { flex: 1; max-width: 60%; }
   .hero-right {
     display: flex;
     flex-direction: column;
@@ -161,10 +165,61 @@
   .hero-right button {
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 1.25rem;
+    padding: 1.5rem 3.5rem;
+  }
+  .hero-right a em,
+  .hero-right button em {
+    font-style: italic;
+    font-size: 0.78em;
+    opacity: 0.75;
+    font-weight: 400;
+    line-height: 1.3;
   }
   @media (max-width: 768px) {
     .hero-split { flex-direction: column; }
     .hero-right { width: 100%; }
+  }
+
+  .bottom-split {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem;
+    max-width: 100%;
+  }
+  .bottom-left { flex: 1; }
+  .bottom-right {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+  }
+  .quiz-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    cursor: pointer;
+    width: 100%;
+  }
+  .quiz-card-content { flex: 1; }
+  .quiz-card-arrow {
+    font-size: 2rem;
+    color: inherit;
+    opacity: 0.5;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .quiz-card:hover .quiz-card-arrow {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+  @media (max-width: 768px) {
+    .bottom-split { flex-direction: column; }
   }
 
 </style>
@@ -206,9 +261,9 @@
                 </p>
   </div>
   <div class="hero-right">
-    <a href="#section-coverage" class="bg-primary text-on-primary px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-all active:scale-95 whitespace-nowrap">Explore the dashboard</a>
-    <a href="results.html" class="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-on-primary transition-all active:scale-95 whitespace-nowrap">Public's Perception of Flemish Media</a>
-    <a href="quiz.html" class="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-on-primary transition-all active:scale-95 whitespace-nowrap">Take the quiz</a>
+    <a href="#section-coverage" class="bg-primary text-on-primary px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-all active:scale-95 whitespace-normal">Explore media coverage<em>See which climate topics appear across Flemish radio and television</em></a>
+    <a href="results.html" class="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-on-primary transition-all active:scale-95 whitespace-normal">View public perception<em>See how respondents experience climate news, trust, and misinformation</em></a>
+    <a href="quiz.html" class="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-on-primary transition-all active:scale-95 whitespace-normal">Take the quiz<em>Share your view and help us understand climate media perception</em></a>
   </div>
 </div>
 </div>
@@ -473,7 +528,7 @@
         <span class="material-symbols-outlined text-sm">dashboard</span>
         INTERACTIVE DASHBOARD
       </div>
-      <h2 class="font-headline text-4xl font-bold text-primary mb-4">
+      <h2 id="section-misinformation" class="font-headline text-4xl font-bold text-primary mb-4">
         Misinformation Scenarios
       </h2>
       <p class="text-on-surface-variant">
@@ -556,44 +611,46 @@
 </script>
 
 
-<!-- Quiz Call-to-Action -->
-<section class="px-8 md:px-24 pb-16 -mt-10 relative z-10">
-  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-[0px_12px_32px_rgba(25,28,29,0.08)] p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<!-- Bottom CTA: single popping quiz card -->
+<section class="bg-surface px-8 md:px-24 py-20">
+  <a href="quiz.html" class="cta-pop group block relative overflow-hidden bg-primary text-on-primary rounded-3xl shadow-[0px_24px_60px_rgba(1,45,29,0.28)] no-underline">
+    <div class="pointer-events-none absolute -top-28 -right-16 w-[30rem] h-[30rem] rounded-full bg-secondary/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-32 -left-20 w-[26rem] h-[26rem] rounded-full bg-primary-fixed/10 blur-3xl"></div>
 
-    <div>
-      <h3 class="font-headline text-2xl font-bold text-primary mb-2">
-        How informed is your news consumption?
-      </h3>
-      <p class="text-on-surface-variant text-sm leading-relaxed max-w-xl">
-        Take a short quiz to find out your media consumption's impact on shaping your understanding of climate change.
-      </p>
+    <div class="relative flex flex-col lg:flex-row items-start lg:items-center gap-10 p-10 md:p-16">
+      <div class="flex-1 space-y-6">
+        <span class="text-secondary-fixed-dim font-medium tracking-widest uppercase text-xs block">Take the quiz</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight">
+          Towards a better <span class="newsreader-italic font-normal text-primary-fixed">climate debate</span>
+        </h2>
+        <p class="text-lg text-emerald-50/70 font-light leading-relaxed max-w-2xl">
+          Our data suggests that the media can play a crucial role in how action-ready the public is. By shifting focus from pure economic fear to solution-oriented journalism, we can accelerate the transition.
+        </p>
+        <p class="text-base text-emerald-50/90 leading-relaxed max-w-2xl">
+          <span class="font-semibold text-on-primary">How informed is your news consumption?</span> Take the short quiz to find out your media diet's impact on how you understand climate change.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <span class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-7 py-3.5 rounded-xl font-semibold transition-all group-hover:bg-secondary-fixed-dim shadow-lg shadow-black/20">
+            Take the quiz
+            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+          </span>
+          <button type="button" onclick="event.preventDefault();event.stopPropagation();" class="inline-flex items-center justify-center gap-2 border border-white/30 text-on-primary px-7 py-3.5 rounded-xl font-semibold hover:bg-white/10 transition-all active:scale-95 duration-200">
+            Read our full report
+          </button>
+          <button type="button" onclick="event.preventDefault();event.stopPropagation();" class="inline-flex items-center justify-center gap-2 border border-white/30 text-on-primary px-7 py-3.5 rounded-xl font-semibold hover:bg-white/10 transition-all active:scale-95 duration-200">
+            Download the data (.csv)
+          </button>
+        </div>
+      </div>
+
+      <div class="cta-arrow shrink-0 self-center text-primary-fixed">
+        <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <polyline points="13 5 20 12 13 19"></polyline>
+        </svg>
+      </div>
     </div>
-
-    <a
-      href="quiz"
-      class="bg-primary text-on-primary px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-all active:scale-95 whitespace-nowrap"
-    >
-      Take the quiz
-    </a>
-
-  </div>
-</section>
-
-
-
-
-<!-- Conclusion Section -->
-<section class="py-32 px-8 md:px-24 bg-surface text-center">
-<div class="max-w-2xl mx-auto space-y-8">
-<h2 class="font-headline text-4xl font-bold text-primary" style="">Towards a better climate debate</h2>
-<p class="text-lg text-on-surface-variant leading-relaxed" style="">
-                    Our data suggests that the media can play a crucial role in how action-ready the public is. By shifting focus from pure economic fear to solution-oriented journalism, we can accelerate the transition.
-                </p>
-<div class="flex flex-col sm:flex-row justify-center gap-4">
-<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all" style="">Read our full report</button>
-<button class="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-bold hover:bg-surface-container-high transition-all" style="">Download the data (.csv)</button>
-</div>
-</div>
+  </a>
 </section>
 </main>
 
@@ -608,9 +665,10 @@
 <script>
 (function () {
   const CHECKPOINTS = [
-    { id: 'section-coverage', label: 'Coverage'         },
-    { id: 'section-keywords', label: 'Keyword Analysis' },
-    { id: 'section-sectors',  label: 'Sector Analysis'  },
+    { id: 'section-coverage',      label: 'Coverage'         },
+    { id: 'section-keywords',      label: 'Keyword Analysis' },
+    { id: 'section-sectors',       label: 'Sector Analysis'  },
+    { id: 'section-misinformation', label: 'Misinformation'  },
   ];
 
   const fill  = document.getElementById('progress-fill');
@@ -629,12 +687,15 @@
 
     const max = scrollMax();
 
-    CHECKPOINTS.forEach(cp => {
+    const total = CHECKPOINTS.length;
+    CHECKPOINTS.forEach((cp, index) => {
       const section = document.getElementById(cp.id);
       if (!section) return;
 
       const top = section.getBoundingClientRect().top + window.scrollY;
-      const pct = max > 0 ? (top / max) * 100 : 0;
+      const navH = nav ? nav.offsetHeight : 0;
+      const scrollTarget = Math.max(0, Math.min(top - navH - 12, max));
+      const pct = ((index + 1) / (total + 1)) * 100;
 
       const el = document.createElement('div');
       el.className = 'progress-marker';
@@ -647,8 +708,7 @@
       el.appendChild(tip);
 
       el.addEventListener('click', () => {
-        const navH = nav ? nav.offsetHeight : 0;
-        window.scrollTo({ top: top - navH - 12, behavior: 'smooth' });
+        window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
       });
 
       track.appendChild(el);
