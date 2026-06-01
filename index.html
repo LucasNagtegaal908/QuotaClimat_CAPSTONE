@@ -78,9 +78,104 @@
       .newsreader-italic { font-family: 'Newsreader'; font-style: italic; }
       .glass-effect { backdrop-filter: blur(16px); }
     </style>
+<style>
+
+  /* ── Vertical Scroll Progress Bar (left edge) ── */
+  #scroll-progress-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    z-index: 1000;
+    pointer-events: none;
+  }
+  .progress-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .progress-fill {
+    width: 100%;
+    height: 0%;
+    background: #2b694d;
+  }
+  .progress-marker {
+    position: absolute;
+    left: -8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #2b694d;
+    background: #ffffff;
+    cursor: pointer;
+    pointer-events: all;
+    transform: translateY(-50%);
+    transition: background 0.3s ease;
+  }
+  .progress-marker.passed {
+    background: #2b694d;
+  }
+  .progress-marker:hover .marker-tooltip {
+    opacity: 1;
+  }
+  .marker-tooltip {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    border: 1px solid #2b694d;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #191c1d;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+  }
+  @media (max-width: 768px) {
+    #scroll-progress-bar { width: 3px; }
+    .progress-marker { width: 10px; height: 10px; left: -3px; }
+    .marker-tooltip { max-width: 120px; white-space: normal; }
+  }
+
+  .hero-split {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .hero-left { flex: 1; max-width: 50%; }
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+  .hero-right a,
+  .hero-right button {
+    width: 100%;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .hero-split { flex-direction: column; }
+    .hero-right { width: 100%; }
+  }
+
+</style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
 
+<div id="scroll-progress-bar">
+  <div class="progress-track">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+</div>
 
 <!-- Top Navigation Bar -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-emerald-950/80 backdrop-blur-md shadow-[0px_12px_32px_rgba(25,28,29,0.04)] h-20 px-8 md:px-12 flex justify-between items-center w-full mx-auto">
@@ -99,14 +194,23 @@
 
 <!-- Hero Section -->
 <header class="min-h-screen flex flex-col justify-center px-8 md:px-24 bg-surface relative overflow-hidden">
-<div class="max-w-4xl z-10">
+<div class="w-full z-10">
 <span class="text-primary font-medium tracking-widest uppercase text-xs mb-4 block" style="">QuotaClimat x UvA</span>
-<h1 class="font-headline text-6xl md:text-8xl text-primary font-extrabold tracking-tighter leading-tight mb-8" style="">
-                    Understanding Climate Coverage in  <span class="newsreader-italic font-normal" style="">Flemish media.</span>
-</h1>
-<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed" style="">
-                    A data-driven analysis of climate coverage in Flemish radio and television. Explore which topics dominate the conversation, how narratives are framed, and where misleading information may shape public understanding.
+<div class="hero-split">
+  <div class="hero-left">
+    <h1 class="font-headline text-6xl md:text-8xl text-primary font-extrabold tracking-tighter leading-tight mb-8">
+                    How does Flemish media talk about climate change?
+    </h1>
+    <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+                    Explore how climate, biodiversity, and environmental crises appear in Flemish radio and television, and discover how media narratives can shape public understanding.
                 </p>
+  </div>
+  <div class="hero-right">
+    <a href="#section-coverage" class="bg-primary text-on-primary px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-all active:scale-95 whitespace-nowrap">Explore the dashboard</a>
+    <a href="results.html" class="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-on-primary transition-all active:scale-95 whitespace-nowrap">Public's Perception of Flemish Media</a>
+    <a href="quiz.html" class="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-on-primary transition-all active:scale-95 whitespace-nowrap">Take the quiz</a>
+  </div>
+</div>
 </div>
 <div class="absolute right-0 bottom-0 w-1/2 h-full opacity-10 pointer-events-none">
 <img class="w-full h-full object-cover grayscale" data-alt="Abstract atmospheric visualization of wind patterns and green botanical textures in a soft professional editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr19tcM6I69bAVPYljXMImEOfwa1jqgqaac5_GdlmmbJkBPkg4A7rLPBXS-67MRF03sIl3jyZqW8McB0eUzHMxDkgg7QCflP-uCkSbGIOqWG9elDalL0chnI89_KIndzysqxdhjj2hfD9fLfQ_hTo7dLDcgc5Bh_SOMxFhlUJf8U8yLMHEEg2QJft4x1CryzsdP4OBCCfK_KJOz1xm7s64nqCdkdkdksbQoNI_CuS24tDSFCQe7Kz0ZFIPnuZipuJxpx_XwkgWouk" style=""/>
@@ -117,34 +221,10 @@
 </header>
 
 
-<!-- Quiz Call-to-Action -->
-<section class="px-8 md:px-24 pb-16 -mt-10 relative z-10">
-  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-[0px_12px_32px_rgba(25,28,29,0.08)] p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-
-    <div>
-      <h3 class="font-headline text-2xl font-bold text-primary mb-2">
-        How informed is your news consumption?
-      </h3>
-      <p class="text-on-surface-variant text-sm leading-relaxed max-w-xl">
-        Take a short quiz to find out your media consumption's impact on shaping your understanding of climate change.
-      </p>
-    </div>
-
-    <a
-      href="quiz"
-      class="bg-primary text-on-primary px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-all active:scale-95 whitespace-nowrap"
-    >
-      Take the quiz
-    </a>
-
-  </div>
-</section>
-
-
 <!-- Section 1: Volume Over Time -->
 <section class="py-32 px-12 md:px-36 grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
 <div class="space-y-6 lg:col-span-1">
-<h2 class="font-headline text-4xl font-bold text-primary" style="">Environmental Crisis Coverage</h2>
+<h2 id="section-coverage" class="font-headline text-4xl font-bold text-primary" style="">Environmental Crisis Coverage</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed" style="">
                     This chart shows the percentage of airtime dedicated to environmental crises in Dutch-language Belgian media. The red line represents total environmental crisis coverage, while the other lines separate climate, biodiversity, and resource-related crises. This helps identify when environmental issues became more or less visible in the media agenda.
                 </p>
@@ -245,7 +325,7 @@
   ></iframe>
 </div>
 <div class="space-y-6 lg:col-span-1 order-1 lg:order-2">
-<h2 class="font-headline text-4xl font-bold text-primary" style="">Keyword Intensity</h2>
+<h2 id="section-keywords" class="font-headline text-4xl font-bold text-primary" style="">Keyword Intensity</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed" style="">
                     This chart shows the number of keyword hits over time for each crisis type. It allows us to see which environmental crises generate the most language and attention in Dutch-language media. Higher keyword counts indicate moments where a topic became more prominent in the news discourse.
                 </p>
@@ -332,7 +412,7 @@
 <!-- Section: Topics / Sectors -->
 <section class="py-16 px-12 md:px-36 bg-surface grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
 <div class="lg:col-span-1 space-y-6 lg:order-2">
-<h2 class="font-headline text-4xl font-bold text-primary" style="">Sector Analysis</h2>
+<h2 id="section-sectors" class="font-headline text-4xl font-bold text-primary" style="">Sector Analysis</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed" style="">
                     This chart shows how different sectors appear in environmental coverage over time. Sectors include energy, ecosystems, industry, agriculture, transport, buildings, water, and resource economy. This helps reveal which parts of society are most strongly connected to environmental reporting.
 </p>
@@ -475,39 +555,31 @@
   }
 </script>
 
-<!-- Section: Media Sources -->
-<section class="py-32 px-8 md:px-24 bg-surface-container-low">
-<div class="max-w-6xl mx-auto text-center mb-16">
-<h2 class="font-headline text-4xl font-bold text-primary" style="">Differences between media groups</h2>
-<p class="text-on-surface-variant text-lg max-w-2xl mx-auto mt-4" style="">Not every medium approaches the crisis the same way. We compare the depth and frequency between the major players.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="p-8 bg-white rounded-xl shadow-sm border-b-4 border-primary">
-<h3 class="font-bold text-xl mb-4" style="">Quality Newspapers</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed mb-6" style="">Focus more on scientific context and international policymaking.</p>
-<div class="flex items-center gap-2 text-primary font-bold">
-<span class="material-symbols-outlined" style="">analytics</span>
-<span class="" style="">Highest depth-score</span>
-</div>
-</div>
-<div class="p-8 bg-white rounded-xl shadow-sm border-b-4 border-secondary">
-<h3 class="font-bold text-xl mb-4" style="">Popular Media</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed mb-6" style="">Emphasize the impact on the citizen's wallet (energy prices).</p>
-<div class="flex items-center gap-2 text-secondary font-bold">
-<span class="material-symbols-outlined" style="">trending_up</span>
-<span class="" style="">Highest volume</span>
-</div>
-</div>
-<div class="p-8 bg-white rounded-xl shadow-sm border-b-4 border-tertiary-fixed">
-<h3 class="font-bold text-xl mb-4" style="">Public Broadcaster</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed mb-6" style="">Maintains the most neutral tone with a strong focus on education.</p>
-<div class="flex items-center gap-2 text-tertiary font-bold">
-<span class="material-symbols-outlined" style="">verified</span>
-<span class="" style="">Most balanced</span>
-</div>
-</div>
-</div>
+
+<!-- Quiz Call-to-Action -->
+<section class="px-8 md:px-24 pb-16 -mt-10 relative z-10">
+  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-[0px_12px_32px_rgba(25,28,29,0.08)] p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+
+    <div>
+      <h3 class="font-headline text-2xl font-bold text-primary mb-2">
+        How informed is your news consumption?
+      </h3>
+      <p class="text-on-surface-variant text-sm leading-relaxed max-w-xl">
+        Take a short quiz to find out your media consumption's impact on shaping your understanding of climate change.
+      </p>
+    </div>
+
+    <a
+      href="quiz"
+      class="bg-primary text-on-primary px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-all active:scale-95 whitespace-nowrap"
+    >
+      Take the quiz
+    </a>
+
+  </div>
 </section>
+
+
 
 
 <!-- Conclusion Section -->
@@ -524,6 +596,86 @@
 </div>
 </section>
 </main>
+
+<script>
+  document.getElementById('btn-explore').addEventListener('click', () => {
+    const target = document.getElementById('section-coverage');
+    const navH = document.querySelector('nav').offsetHeight || 0;
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navH - 16, behavior: 'smooth' });
+  });
+</script>
+
+<script>
+(function () {
+  const CHECKPOINTS = [
+    { id: 'section-coverage', label: 'Coverage'         },
+    { id: 'section-keywords', label: 'Keyword Analysis' },
+    { id: 'section-sectors',  label: 'Sector Analysis'  },
+  ];
+
+  const fill  = document.getElementById('progress-fill');
+  const track = document.querySelector('.progress-track');
+  const nav   = document.querySelector('nav');
+
+  let markers = [];
+
+  function scrollMax() {
+    return document.body.scrollHeight - window.innerHeight;
+  }
+
+  function buildMarkers() {
+    markers.forEach(m => m.el && m.el.remove());
+    markers = [];
+
+    const max = scrollMax();
+
+    CHECKPOINTS.forEach(cp => {
+      const section = document.getElementById(cp.id);
+      if (!section) return;
+
+      const top = section.getBoundingClientRect().top + window.scrollY;
+      const pct = max > 0 ? (top / max) * 100 : 0;
+
+      const el = document.createElement('div');
+      el.className = 'progress-marker';
+      el.style.top = pct + '%';
+
+      const tip = document.createElement('span');
+      tip.className = 'marker-tooltip';
+      tip.textContent = cp.label;
+
+      el.appendChild(tip);
+
+      el.addEventListener('click', () => {
+        const navH = nav ? nav.offsetHeight : 0;
+        window.scrollTo({ top: top - navH - 12, behavior: 'smooth' });
+      });
+
+      track.appendChild(el);
+      markers.push({ id: cp.id, label: cp.label, top, el });
+    });
+  }
+
+  function updateProgress() {
+    const y   = window.scrollY;
+    const max = scrollMax();
+    const pct = max > 0 ? (y / max) * 100 : 0;
+
+    fill.style.height = pct + '%';
+
+    const navH = nav ? nav.offsetHeight : 0;
+    markers.forEach(m => {
+      m.el.classList.toggle('passed', y >= m.top - navH);
+    });
+  }
+
+  buildMarkers();
+  updateProgress();
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', () => { buildMarkers(); updateProgress(); });
+}());
+</script>
 
 <!-- Footer -->
 <footer class="bg-emerald-50 dark:bg-emerald-950 text-emerald-900 dark:text-emerald-100 py-16 px-8 md:px-12 mt-20">
