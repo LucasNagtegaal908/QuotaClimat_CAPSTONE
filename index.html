@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
@@ -329,7 +329,7 @@
 <!-- PASTE your Metabase public embed URL in the src attribute below -->
 <div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden lg:col-span-2 h-[500px]">
   <iframe
-    src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/9fe072b3-77ed-42ed-b0f9-24aeff457c59"
+    src="python_index/Charts/Environmental_Crisis_Coverage.html"
     frameborder="0"
     width="100%"
     height="100%"
@@ -356,14 +356,14 @@
       </p>
     </div>
 
-    <!-- Asymmetric chart grid: 1/3 left + 2/3 right on desktop, stacked on mobile -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- 2/5 left + 3/5 right chart grid -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
 
-      <!-- Left column: Chart 2 -->
-      <div class="space-y-4">
+      <!-- Left column: Chart 2 (2/5) -->
+      <div class="space-y-4 md:col-span-2">
         <div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-[600px]">
           <iframe
-            src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/93df3861-c42e-45d0-8fc9-4670b114b321"
+            src="python_index/Charts/Media_Coverage_per_Channel.html"
             frameborder="0"
             width="100%"
             height="100%"
@@ -377,13 +377,13 @@
         </div>
       </div>
 
-      <!-- Right column: Chart 3 (2/3 width) -->
-      <div class="space-y-4 md:col-span-2">
-        <div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-[600px]">
+      <!-- Right column: Chart 3 (3/5) -->
+      <div class="space-y-4 md:col-span-3">
+        <div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-[800px]">
           <!-- INSERT IFRAME CHART 3 HERE -->
           <!-- Replace with the live Metabase embed for: "Average % of Coverage per Channel" -->
           <iframe
-            src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/422a831e-fd62-405e-a294-0649bf15d9a6"
+            src="python_index/Charts/Environmental_Coverage_pChannel.html"
             frameborder="0"
             width="100%"
             height="100%"
@@ -407,7 +407,7 @@
 <!-- CHART 2: Broadcaster Coverage Comparison -->
 <div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden lg:col-span-2 h-[600px] order-2 lg:order-1">
   <iframe
-    src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/99c89758-5f1f-47b3-ad6e-c665bef5eac3"
+    src="python_index/Charts/Keyword_count.html"
     frameborder="0"
     width="100%"
     height="100%"
@@ -416,7 +416,7 @@
   ></iframe>
 </div>
 <div class="space-y-6 lg:col-span-1 order-1 lg:order-2">
-<h2 id="section-keywords" class="font-headline text-4xl font-bold text-primary" style="">Keyword Intensity</h2>
+<h2 id="section-keywords" class="font-headline text-4xl font-bold text-primary" style="">Keyword Count</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed" style="">
                     This chart shows the number of keyword hits over time for each crisis type. It allows us to see which environmental crises generate the most language and attention in Dutch-language media. Higher keyword counts indicate moments where a topic became more prominent in the news discourse.
                 </p>
@@ -430,54 +430,70 @@
 </section>
 
 
-<!-- Keyword Count Section -->
-<section class="py-32 px-4 md:px-40 bg-surface-container-low">
+<!-- Subcategory Coverage Section -->
+<section id="keyword-analysis" class="py-32 px-4 md:px-40 bg-surface-container-low">
   <div class="space-y-10">
 
-    <!-- Full-width heading + intro text -->
     <div class="space-y-4">
-      <h2 class="font-headline text-4xl font-bold text-primary">Keyword Count</h2>
+      <h2 class="font-headline text-4xl font-bold text-primary">Subcategory Coverage</h2>
       <p class="text-on-surface-variant text-lg leading-relaxed">
-        These two visualisations show how environmental language appears across Dutch-language Belgian media. The keyword count highlights the most frequently used environmental terms overall, while the keyword-per-hour chart shows how strongly each channel uses this language over time. Together, they move from what words dominate the debate to which media outlets amplify those words most intensely during specific moments.
+        These three charts break down environmental coverage by subcategory across Dutch-language Belgian channels. Each chart shows how often climate, biodiversity, and resource-related topics appear — revealing which channels prioritise which types of environmental coverage.
       </p>
     </div>
 
-    <!-- Asymmetric chart grid: 1/3 left + 2/3 right on desktop, stacked on mobile -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-      <!-- Left column: Keyword Count bar chart -->
+      <!-- Climate subcategories -->
       <div class="space-y-4">
         <div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-[600px]">
           <iframe
-            src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/e005beb6-5f85-4a27-8cb6-8171c8b70f00"
+            src="python_index/Charts/Climate_Coverage_per_Channel.html"
             frameborder="0"
             width="100%"
             height="100%"
             allowtransparency
-            title="Chart – Keyword Count"
+            title="Climate Subcategories by Channel"
           ></iframe>
         </div>
         <div class="p-6 bg-white rounded-xl border-l-4 border-secondary">
           <p class="text-sm font-medium text-secondary uppercase tracking-tighter">Observation</p>
-          <p class="italic text-on-surface">“Ecologisch,” “vervuild,” and “vergroenen” appear far more often than other keywords. This suggests that Dutch-language media often talks about environmental issues in broad terms, rather than using more specific climate language. Words like “klimaatverandering” and “fossiele brandstoffen” rank much lower, which may limit how clearly climate issues are explained. </p>
+          <p class="italic text-on-surface">Climate coverage varies significantly across channels, with some outlets dedicating considerably more airtime to climate-specific topics than others.</p>
         </div>
       </div>
 
-      <!-- Right column: Keyword/Hour per Channel line chart (2/3 width) -->
-      <div class="space-y-4 md:col-span-2">
+      <!-- Biodiversity subcategories -->
+      <div class="space-y-4">
         <div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-[600px]">
           <iframe
-            src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/750ea534-6a8d-49ee-bae1-b3c62d7f3ce7"
+            src="python_index/Charts/Biodiversity_Coverage_Channel.html"
             frameborder="0"
             width="100%"
             height="100%"
             allowtransparency
-            title="Chart – Keyword/Hour per Channel"
+            title="Biodiversity Subcategories by Channel"
           ></iframe>
         </div>
         <div class="p-6 bg-white rounded-xl border-l-4 border-secondary">
           <p class="text-sm font-medium text-secondary uppercase tracking-tighter">Observation</p>
-          <p class="italic text-on-surface">Environmental keyword usage is highly uneven across channels and over time. Canvas shows an exceptional spike in early February, reaching nearly double the rate of other channels at that moment, while STU BRU produces the sharpest single peak of the entire period in early May. Most channels hover at low baseline levels between events, reinforcing that environmental language in Dutch-language media is largely reactive — driven by specific news moments — rather than a consistent editorial priority.</p>
+          <p class="italic text-on-surface">Biodiversity coverage is generally lower than climate coverage across all channels, suggesting it receives less editorial priority in Dutch-language media.</p>
+        </div>
+      </div>
+
+      <!-- Resources subcategories -->
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-[600px]">
+          <iframe
+            src="python_index/Charts/Resource_Coverage_Channel.html"
+            frameborder="0"
+            width="100%"
+            height="100%"
+            allowtransparency
+            title="Resources Subcategories by Channel"
+          ></iframe>
+        </div>
+        <div class="p-6 bg-white rounded-xl border-l-4 border-secondary">
+          <p class="text-sm font-medium text-secondary uppercase tracking-tighter">Observation</p>
+          <p class="italic text-on-surface">Resource-related coverage shows the most uneven distribution across channels, indicating that some outlets focus on this subcategory far more than others.</p>
         </div>
       </div>
 
@@ -516,7 +532,7 @@
 <!-- PASTE your Metabase public embed URL in the src attribute below -->
 <div class="lg:col-span-2 lg:order-1 w-full bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden h-[500px]">
   <iframe
-    src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/4f4218f5-4f89-4da2-aed8-d9dd2aa90bd1"
+    src="python_index/Charts/Sector_Counts_Over_Time.html"
     frameborder="0"
     width="100%"
     height="100%"
@@ -543,7 +559,7 @@
 <!-- PASTE your Metabase public embed URL in the src attribute below -->
 <div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden lg:col-span-2 h-[700px] w-full">
   <iframe
-    src="https://barometre7kfudatm-metabase-barometre.functions.fnc.fr-par.scw.cloud/public/question/40eb6b2a-abf2-42c6-8aff-ef0d273a6d5d"
+    src="python_index/Charts/Sector_Analysis_per_Channel.html"
     frameborder="0"
     width="100%"
     height="100%"

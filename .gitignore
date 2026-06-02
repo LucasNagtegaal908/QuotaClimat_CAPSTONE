@@ -2,3 +2,6 @@
 .vscode/
 desktop.ini
 .env
+*.csv
+*.xls
+*.xlsx
