@@ -7,7 +7,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;0,800;1,400&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -82,8 +81,6 @@
       .cta-pop:hover { transform: translateY(-4px); box-shadow: 0px 32px 72px rgba(1,45,29,0.34); }
       .cta-arrow { transition: transform 0.3s ease; }
       .cta-pop:hover .cta-arrow { transform: translateX(10px); }
-      .toc-link { transition: transform 0.2s ease, opacity 0.2s ease; }
-      .toc-link:hover { transform: translateX(3px); }
     </style>
 <style>
 
@@ -186,55 +183,6 @@
   }
 
 </style>
-<style id="tweak-overrides">
-  /* ── Tweak: Accent mood (CSS variables drive the brand color) ── */
-  :root {
-    --tw-accent: #012d1d;
-    --tw-accent-bright: #2b694d;
-    --tw-accent-pale: #ecf6f0;
-  }
-  .text-primary { color: var(--tw-accent) !important; }
-  .bg-primary { background-color: var(--tw-accent) !important; }
-  .border-primary { border-color: var(--tw-accent) !important; }
-  .hover\:bg-primary\/90:hover { background-color: color-mix(in srgb, var(--tw-accent) 90%, transparent) !important; }
-  .progress-fill { background: var(--tw-accent-bright) !important; }
-  .text-secondary-fixed-dim { color: var(--tw-accent-bright) !important; }
-  .text-primary-fixed { color: var(--tw-accent-pale) !important; }
-  .bg-primary-fixed { background-color: var(--tw-accent-pale) !important; }
-  /* nav + footer chrome cohesion */
-  .text-emerald-900 { color: var(--tw-accent) !important; }
-  .border-emerald-900 { border-color: var(--tw-accent) !important; }
-  .bg-emerald-50 { background-color: var(--tw-accent-pale) !important; }
-  .text-emerald-800\/60 { color: color-mix(in srgb, var(--tw-accent) 60%, transparent) !important; }
-  .hover\:text-emerald-900:hover { color: var(--tw-accent) !important; }
-
-  /* ── Tweak: Editorial voice (headline personality) ── */
-  body[data-headline="modern"] .font-headline,
-  body[data-headline="modern"] .newsreader-italic {
-    font-family: 'Space Grotesk', sans-serif !important;
-    letter-spacing: -0.02em !important;
-  }
-  body[data-headline="modern"] .font-headline { font-weight: 600 !important; }
-  body[data-headline="modern"] .newsreader-italic { font-style: italic !important; font-weight: 500 !important; }
-
-  body[data-headline="statement"] .font-headline,
-  body[data-headline="statement"] .newsreader-italic {
-    font-family: 'Work Sans', sans-serif !important;
-    text-transform: uppercase !important;
-    letter-spacing: -0.015em !important;
-    font-weight: 800 !important;
-    line-height: 0.98 !important;
-  }
-  body[data-headline="statement"] .newsreader-italic { font-style: normal !important; }
-
-  /* ── Tweak: Spatial rhythm (pacing / whitespace) ── */
-  body[data-rhythm="compact"] main > section { padding-top: 4.5rem !important; padding-bottom: 4.5rem !important; }
-  body[data-rhythm="compact"] header.min-h-screen { min-height: 72vh !important; }
-  body[data-rhythm="compact"] header .mt-20 { margin-top: 3rem !important; }
-
-  body[data-rhythm="expansive"] main > section { padding-top: 12rem !important; padding-bottom: 12rem !important; }
-  body[data-rhythm="expansive"] header .mt-20 { margin-top: 7rem !important; }
-</style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
 
@@ -286,31 +234,6 @@
 <span class="material-symbols-outlined text-4xl" style="">expand_more</span>
 </div>
 </header>
-<!-- Hero Table of Contents -->
-<section class="bg-surface px-8 md:px-24 py-12">
-  <div class="flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-emerald-900/10 pt-10">
-    <a href="#section-coverage" class="toc-link text-lg text-primary no-underline">Coverage</a>
-    <span class="material-symbols-outlined text-3xl text-primary opacity-40" aria-hidden="true">arrow_forward</span>
-    <a href="#section-keywords" class="toc-link text-lg text-primary no-underline">Keyword Analysis</a>
-    <span class="material-symbols-outlined text-3xl text-primary opacity-40" aria-hidden="true">arrow_forward</span>
-    <a href="#section-sectors" class="toc-link text-lg text-primary no-underline">Sector Analysis</a>
-    <span class="material-symbols-outlined text-3xl text-primary opacity-40" aria-hidden="true">arrow_forward</span>
-    <a href="#section-misinformation" class="toc-link text-lg text-primary no-underline">Misinformation</a>
-  </div>
-</section>
-<script>
-  document.querySelectorAll('.toc-link').forEach(function (row) {
-    row.addEventListener('click', function (e) {
-      e.preventDefault();
-      var target = document.getElementById(row.getAttribute('href').slice(1));
-      if (!target) return;
-      var fixedNav = document.querySelector('nav');
-      var navH = fixedNav ? fixedNav.offsetHeight : 0;
-      var y = target.getBoundingClientRect().top + window.scrollY - navH - 16;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    });
-  });
-</script>
 
 
 <!-- Section 1: Volume Over Time -->
@@ -374,7 +297,7 @@
         </div>
         <div class="p-6 bg-white rounded-xl border-l-4 border-secondary">
           <p class="text-sm font-medium text-secondary uppercase tracking-tighter">Observation</p>
-          <p class="italic text-on-surface">VTM has the most environmental coverage, followed by Canvas and VRT 1. Radio channels like STU BRU and QMUSIC show much lower coverage. This means people may see very different amounts of climate-related information depending on which channel they follow.</p>
+          <p class="italic text-on-surface">VTM appears to have the highest total environmental coverage among the selected channels, followed by Canvas and VRT 1. Radio channels such as STU BRU and QMUSIC show much lower levels of environmental coverage. This suggests that audiences may encounter very different levels of climate-related information depending on which outlet they follow.</p>
         </div>
       </div>
 
@@ -460,7 +383,7 @@
         </div>
         <div class="p-6 bg-white rounded-xl border-l-4 border-secondary">
           <p class="text-sm font-medium text-secondary uppercase tracking-tighter">Observation</p>
-          <p class="italic text-on-surface">“Ecologisch,” “vervuild,” and “vergroenen” appear far more often than other keywords. This suggests that Dutch-language media often talks about environmental issues in broad terms, rather than using more specific climate language. Words like “klimaatverandering” and “fossiele brandstoffen” rank much lower, which may limit how clearly climate issues are explained. </p>
+          <p class="italic text-on-surface">"Ecologisch," "vervuild," and "vergroenen" dominate the keyword ranking by a significant margin, suggesting that Dutch-language media frames environmental coverage primarily through broad ecological and pollution language rather than specific policy or crisis terms. Notably, words like "klimaatverandering" and "fossiele brandstoffen" appear far lower in the ranking — indicating that precise climate vocabulary is used far less frequently than general environmental language, which may limit the depth of public understanding conveyed through media coverage.</p>
         </div>
       </div>
 
@@ -692,14 +615,11 @@
 </main>
 
 <script>
-  const btnExplore = document.getElementById('btn-explore');
-  if (btnExplore) {
-    btnExplore.addEventListener('click', () => {
-      const target = document.getElementById('section-coverage');
-      const navH = document.querySelector('nav').offsetHeight || 0;
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navH - 16, behavior: 'smooth' });
-    });
-  }
+  document.getElementById('btn-explore').addEventListener('click', () => {
+    const target = document.getElementById('section-coverage');
+    const navH = document.querySelector('nav').offsetHeight || 0;
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navH - 16, behavior: 'smooth' });
+  });
 </script>
 
 <script>
@@ -743,61 +663,4 @@
 </div>
 </div>
 </footer>
-
-<!-- ── Tweaks panel ──────────────────────────────────────── -->
-<div id="tweaks-root"></div>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
-<script type="text/babel">
-  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-    "headline": "editorial",
-    "rhythm": "editorial",
-    "accent": "#012d1d"
-  }/*EDITMODE-END*/;
-
-  // accent name + derived bright/pale tones, keyed by the deep swatch value
-  const ACCENTS = {
-    "#012d1d": { bright: "#2b694d", pale: "#ecf6f0" }, // Forest
-    "#12263a": { bright: "#2e5a7d", pale: "#eaf0f5" }, // Ink
-    "#4a241a": { bright: "#a8512e", pale: "#f6efe9" }  // Clay
-  };
-
-  function applyTweaks(t) {
-    document.body.dataset.headline = t.headline;
-    document.body.dataset.rhythm = t.rhythm;
-    const c = ACCENTS[t.accent] || ACCENTS["#012d1d"];
-    const r = document.documentElement.style;
-    r.setProperty('--tw-accent', t.accent);
-    r.setProperty('--tw-accent-bright', c.bright);
-    r.setProperty('--tw-accent-pale', c.pale);
-  }
-
-  // apply defaults pre-mount so there is no flash of the un-tweaked state
-  applyTweaks(TWEAK_DEFAULTS);
-
-  function TweaksApp() {
-    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-    React.useEffect(() => { applyTweaks(t); }, [t]);
-    return (
-      <TweaksPanel title="Tweaks">
-        <TweakSection label="Editorial voice" />
-        <TweakRadio label="Headline" value={t.headline}
-          options={['editorial', 'modern', 'statement']}
-          onChange={(v) => setTweak('headline', v)} />
-        <TweakSection label="Pacing" />
-        <TweakRadio label="Spatial rhythm" value={t.rhythm}
-          options={['compact', 'editorial', 'expansive']}
-          onChange={(v) => setTweak('rhythm', v)} />
-        <TweakSection label="Mood" />
-        <TweakColor label="Accent" value={t.accent}
-          options={['#012d1d', '#12263a', '#4a241a']}
-          onChange={(v) => setTweak('accent', v)} />
-      </TweaksPanel>
-    );
-  }
-
-  ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksApp />);
-</script>
 </body></html>
