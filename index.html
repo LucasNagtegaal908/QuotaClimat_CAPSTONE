@@ -259,7 +259,7 @@
 
 
 <!-- Hero Section -->
-<header class="min-h-screen flex flex-col justify-center px-8 md:px-24 bg-surface relative overflow-hidden">
+<header class="min-h-[70vh] flex flex-col justify-center px-8 md:px-24 bg-surface relative overflow-hidden">
 <div class="w-full z-10">
 <span class="text-primary font-medium tracking-widest uppercase text-xs mb-4 block" style="">QuotaClimat x UvA</span>
 <div class="hero-split">
@@ -285,6 +285,29 @@
 <span class="material-symbols-outlined text-4xl" style="">expand_more</span>
 </div>
 </header>
+
+<!-- Section: How this project creates impact -->
+<section class="py-20 px-12 md:px-36">
+<div class="space-y-6 max-w-3xl">
+<h2 class="font-headline text-4xl font-bold text-primary">How this project creates impact</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">This dashboard connects media data with public perception. It shows how Flemish radio and television cover climate issues, how people interpret that coverage, and where misinformation or misleading framing may appear.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
+<div class="p-6 bg-primary rounded-xl">
+<p class="text-sm font-medium text-primary-fixed uppercase tracking-tighter">Make patterns visible</p>
+<p class="italic text-emerald-50/70 mt-2">We show which climate topics, channels, keywords, and sectors receive attention.</p>
+</div>
+<div class="p-6 bg-primary rounded-xl">
+<p class="text-sm font-medium text-primary-fixed uppercase tracking-tighter">Build media awareness</p>
+<p class="italic text-emerald-50/70 mt-2">The quiz helps users reflect on their own news habits, trust, and ability to recognise misinformation.</p>
+</div>
+<div class="p-6 bg-primary rounded-xl">
+<p class="text-sm font-medium text-primary-fixed uppercase tracking-tighter">Support accountability</p>
+<p class="italic text-emerald-50/70 mt-2">The dashboard gives citizens, journalists, and policymakers a clearer basis for discussing climate coverage.</p>
+</div>
+</div>
+</section>
+
 <!-- Hero Table of Contents -->
 <section class="bg-surface px-8 md:px-24 py-12">
   <div class="flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-emerald-900/10 pt-10">
@@ -402,33 +425,6 @@
 </section>
 
 
-<!-- Media Comparison -->
-<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-3 gap-16 items-center bg-surface">
-<!-- CHART 2: Broadcaster Coverage Comparison -->
-<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden lg:col-span-2 h-[600px] order-2 lg:order-1">
-  <iframe
-    src="python_index/Charts/Keyword_count.html"
-    frameborder="0"
-    width="100%"
-    height="100%"
-    allowtransparency
-    title="Chart 2 – Broadcaster Coverage Comparison"
-  ></iframe>
-</div>
-<div class="space-y-6 lg:col-span-1 order-1 lg:order-2">
-<h2 id="section-keywords" class="font-headline text-4xl font-bold text-primary" style="">Keyword Count</h2>
-<p class="text-on-surface-variant text-lg leading-relaxed" style="">
-                    This chart shows the number of keyword hits over time for each crisis type. It allows us to see which environmental crises generate the most language and attention in Dutch-language media. Higher keyword counts indicate moments where a topic became more prominent in the news discourse.
-                </p>
-<div class="p-6 bg-white rounded-xl border-l-4 border-secondary">
-<p class="text-sm font-medium text-secondary uppercase tracking-tighter" style="">Observation</p>
-<p class="italic text-on-surface" style="">"Climate crisis keywords dominate the chart, with several large spikes. Biodiversity-related keywords are more stable over time, while resource crisis keywords remain lower but still follow similar peaks. This suggests that climate is the most visible environmental crisis in the selected media data."</p>
-</div>
-<ul class="mt-2 space-y-1 underline">
-</ul>
-</div>
-</section>
-
 
 <!-- Subcategory Coverage Section -->
 <section id="keyword-analysis" class="py-32 px-4 md:px-40 bg-surface-container-low">
@@ -499,6 +495,34 @@
 
     </div>
   </div>
+</section>
+
+
+<!-- Media Comparison -->
+<section class="py-32 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-3 gap-16 items-center bg-surface">
+<!-- CHART 2: Broadcaster Coverage Comparison -->
+<div class="bg-white rounded-xl shadow-[0px_12px_32px_rgba(25,28,29,0.04)] overflow-hidden lg:col-span-2 h-[600px] order-2 lg:order-1">
+  <iframe
+    src="python_index/Charts/Keyword_count.html"
+    frameborder="0"
+    width="100%"
+    height="100%"
+    allowtransparency
+    title="Chart 2 – Broadcaster Coverage Comparison"
+  ></iframe>
+</div>
+<div class="space-y-6 lg:col-span-1 order-1 lg:order-2">
+<h2 id="section-keywords" class="font-headline text-4xl font-bold text-primary" style="">Keyword Count</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed" style="">
+                    This chart shows the number of keyword hits over time for each crisis type. It allows us to see which environmental crises generate the most language and attention in Dutch-language media. Higher keyword counts indicate moments where a topic became more prominent in the news discourse.
+                </p>
+<div class="p-6 bg-white rounded-xl border-l-4 border-secondary">
+<p class="text-sm font-medium text-secondary uppercase tracking-tighter" style="">Observation</p>
+<p class="italic text-on-surface" style="">"Climate crisis keywords dominate the chart, with several large spikes. Biodiversity-related keywords are more stable over time, while resource crisis keywords remain lower but still follow similar peaks. This suggests that climate is the most visible environmental crisis in the selected media data."</p>
+</div>
+<ul class="mt-2 space-y-1 underline">
+</ul>
+</div>
 </section>
 
 
