@@ -1,3 +1,9 @@
+## How to run
+## 1. Install Node.js from https://nodejs.org (if not already installed)
+## 2. Open a terminal in this folder
+## 3. Run: npx serve
+## 4. Open http://localhost:3000 in your browser
+
 supabase
 pandas
 plotly
