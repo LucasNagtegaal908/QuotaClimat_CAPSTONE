@@ -1,8 +1,14 @@
 ## How to run
+## We had some problems with formatting and our iframe links, so we used node.js to run it locally. Here are the steps to run the project:
 ## 1. Install Node.js from https://nodejs.org (if not already installed)
 ## 2. Open a terminal in this folder
 ## 3. Run: npx serve
 ## 4. Open http://localhost:3000 in your browser
+
+## Sample dataset
+## Our project collects live quiz responses via Supabase. A sample snapshot of the data
+## is included as charts/population_data.json — this is what results.html uses to render
+## the charts, so the results page works fully offline without a database connection.
 
 supabase
 pandas

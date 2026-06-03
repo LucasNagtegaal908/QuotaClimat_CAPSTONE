@@ -285,6 +285,6 @@ population_data = {
 
 with open("charts/population_data.json", "w", encoding="utf-8") as f:
     json.dump(population_data, f, indent=2, ensure_ascii=False)
-print("✓ population_data.json")
+print("population_data.json")
 
 print(f"\nDone. {len(df)} respondents in dataset.")
