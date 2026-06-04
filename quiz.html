@@ -113,7 +113,6 @@
     <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="index.html">Home</a>
     <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-900 border-b-2 border-emerald-900 pb-1 cursor-pointer active:scale-95 duration-200" href="quiz.html">Quiz</a>
     <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="public_perception.html">Perception</a>
-    <a class="font-['Newsreader'] italic text-lg tracking-tight text-emerald-800/60 hover:text-emerald-900 transition-colors cursor-pointer active:scale-95 duration-200" href="#">Sources</a>
   </div>
   <a href="https://quotaclimat.org/en/actualites/mapping-climate-disinformation-in-french-and-brazilian-mainstream-media/" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-2 rounded-xl text-sm font-medium hover:bg-primary/90 transition-all cursor-pointer active:scale-95 duration-200">Methodology</a>
 </nav>
@@ -800,6 +799,8 @@
     // Build URL params from the results array
     const q3Matrix       = results.find(r => r.question === 'q3_matrix');
     const factCheckAnswer = results.find(r => r.question === 5)?.answer;
+    console.log('DEBUG results array:', JSON.stringify(results));
+    console.log('DEBUG q3Matrix:', JSON.stringify(q3Matrix));
 
     const params = new URLSearchParams({
       q1:           results.find(r => r.question === 0)?.answer  ?? '',
