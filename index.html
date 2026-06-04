@@ -668,13 +668,21 @@
     <div class="text-center mb-12">
       <div class="inline-flex items-center gap-2 bg-primary-container px-4 py-1 rounded-full text-on-primary-container text-xs font-bold mb-4">
         <span class="material-symbols-outlined text-sm">dashboard</span>
-        INTERACTIVE DASHBOARD
+        Misinformation Narratives Explorer
       </div>
       <h2 id="section-misinformation" class="font-headline text-4xl font-bold text-primary mb-4">
-        Misinformation Scenarios
+        Common Misinformation Scenarios
       </h2>
       <p class="text-on-surface-variant">
-        Here you can explore common climate change misinformation narratives. Click on each card to see a detailed analysis and examples to look at in more detail.
+        Although over the span of around 4 months no specific misinformation cases were found in the Flemish media, it is still crucial to take into account the existence of false information in the discourse around climate change.
+      </p>
+      <br>
+      <p class="text-on-surface-variant">
+        For that purpose, a tool is added beneath wherein key misinformation narratives previously studied by <a href="https://science.feedback.org/" target="_blank" class="text-primary underline">Science Feedback</a> in the French media have been added. In this case, being aware of these general narratives can better deepen your specific knowledge to recognise and reflect on misleading claims in the Flemish media sphere.
+      </p>
+      <br>
+      <p class="text-on-surface-variant">
+        Click on each card to see a detailed analysis and examples to look at in more detail. A short debunk explanation has been added from ScienceFeedback <a href="https://science.feedback.org/" target="_blank" class="text-primary underline">Science Feedback</a>  per narrative, while a total of 16 narratives are added.
       </p>
     </div>
 
@@ -692,7 +700,7 @@
       <!-- Card 2 -->
       <div onclick="showDetail(1)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-tertiary hover:shadow-lg transition-all">
         <p class="italic text-on-surface mb-2">
-          "Scientific data on climate change is falsified to manipulate public opinion."
+          "The environmental impact of wind turbines is negative and they are disastrous for biodiversity (birds) and human health (diseases)."
         </p>
         <span class="text-sm font-bold text-tertiary uppercase">Unsupported</span>
       </div>
@@ -708,39 +716,160 @@
       <!-- Card 4 -->
       <div onclick="showDetail(3)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-secondary hover:shadow-lg transition-all">
         <p class="italic text-on-surface mb-2">
-          "Air conditioning has no negative impact and is a good solution."
+          "The climate has always fluctuated in a natural fashion; the same is true today, and there’s no reason to worry about it."
         </p>
-        <span class="text-sm font-bold text-secondary uppercase">Lacks context</span>
+        <span class="text-sm font-bold text-secondary uppercase">Misleading</span>
       </div>
 
+      <!-- Hidden extra cards -->
+
+    <div id="extraScenarios" class="contents hidden">
+
+      <div onclick="showDetail(4)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"Renewable energy is ineffective or useless because of its intermittency."</p>
+        <span class="text-sm font-bold text-primary uppercase">Unsupported</span>
+      </div>
+
+      <div onclick="showDetail(5)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"State support for renewables is massive (on the order of tens to hundreds of billions of euros in the coming decades)."</p>
+        <span class="text-sm font-bold text-primary uppercase">Lacks Context</span>
+      </div>
+
+      <div onclick="showDetail(6)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"Variable renewables cause blackouts and compromise the security of the electricity supply."</p>
+        <span class="text-sm font-bold text-primary uppercase">Unsupported</span>
+      </div>
+
+      <div onclick="showDetail(7)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"In France, nuclear power production is sufficient to meet energy needs and, thanks to it, the electricity and/or energy mix is already carbon-free."</p>
+        <span class="text-sm font-bold text-primary uppercase">Inaccurate</span>
+      </div>
+
+      <div onclick="showDetail(8)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"France is one of the lowest greenhouse gas emitters in the world."</p>
+        <span class="text-sm font-bold text-primary uppercase">Lacks Context</span>
+      </div>
+
+      <div onclick="showDetail(9)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"Reducing France’s greenhouse gas emissions has no impact on the overall climate if other countries don’t do the same."</p>
+        <span class="text-sm font-bold text-primary uppercase">Inaccurate</span>
+      </div>
+
+      <div onclick="showDetail(10)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"Combustion vehicles aren’t an environmental problem, especially if they are fuelled by ethanol or diesel or if they are new."</p>
+        <span class="text-sm font-bold text-primary uppercase">Misleading</span>
+      </div>
+
+      <div onclick="showDetail(11)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"Climate policies are adopted without any preliminary study and without knowing the impact that they could have."</p>
+        <span class="text-sm font-bold text-primary uppercase">Inaccurate</span>
+      </div>
+
+      <div onclick="showDetail(12)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"Electric vehicles pollute more than petrol vehicles or hybrids."</p>
+        <span class="text-sm font-bold text-primary uppercase">Inaccurate</span>
+      </div>
+
+      <div onclick="showDetail(13)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"Scientific data on the magnitude of climate change is falsified and exaggerated by scientists, NGOs, and institutions, with the goal of manipulating public opinion and serving their personal interests."</p>
+        <span class="text-sm font-bold text-primary uppercase">Unsupported</span>
+      </div>
+
+      <div onclick="showDetail(14)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"The human origin of global warming is uncertain or insignificant."</p>
+        <span class="text-sm font-bold text-primary uppercase">Incorrect</span>
+      </div>
+
+      <div onclick="showDetail(15)" class="cursor-pointer p-6 bg-white rounded-xl border-l-4 border-primary hover:shadow-lg transition-all">
+        <p class="italic text-on-surface mb-2">"Air conditioning has no negative impact on climate change; it is a good adaptation solution."</p>
+        <span class="text-sm font-bold text-primary uppercase">Lacks Context</span>
+      </div>
+
+    </div>
+
+    </div>
+
+    <!-- Show More Button -->
+    <div class="text-center mt-8">
+      <button
+        id="showMoreBtn"
+        onclick="showMoreScenarios()"
+        class="px-6 py-3 bg-primary text-white rounded-xl hover:opacity-90 transition-all"
+      >
+        Show More Scenarios
+      </button>
     </div>
 
     <!-- Detail Panel -->
     <div id="detailBox" class="mt-10 hidden p-8 bg-white rounded-2xl border border-outline-variant">
       <h3 id="detailTitle" class="font-bold text-xl text-primary mb-4"></h3>
       <p id="detailText" class="text-on-surface-variant leading-relaxed"></p>
+      <br>
+      <div id="detailSource" class="text-sm text-on-surface-variant"></div>
+      <br>
+      <div id="detailSourceAPA" class="text-sm text-on-surface-variant"></div>
     </div>
 
   </div>
 </section>
 
 <script>
+  const sourceUrl = "https://science.feedback.org/insights-monitoring-climate-misinformation-french-tv-radio-scale-narratives/";
+
   const scenarios = [
     {
       title: "Misleading claim about electricity prices",
-      text: "Debunking can be found in a report written by QuotaClimat themselves in Data for Good, QuotaClimat, & ScienceFeedback (2025). Mapping Climate Disinformation in French and Brazilian Mainstream Media. https://quotaclimat.org/app/uploads/2025/10/Mapping-climate-disinformation-France-Brazil-medias-october-2025.pdf.); Examples can only be found when data has been analysed."
+      text: "Solar and wind electricity are now cheaper to generate than electricity from fossil fuel or nuclear plants. More solar and wind doesn’t necessarily result in more expensive electricity bills."
     },
     {
-      title: "Conspiracy about scientific manipulation",
-      text: "Debunking can be found in a report written by QuotaClimat themselves in Data for Good, QuotaClimat, & ScienceFeedback (2025). Mapping Climate Disinformation in French and Brazilian Mainstream Media. https://quotaclimat.org/app/uploads/2025/10/Mapping-climate-disinformation-France-Brazil-medias-october-2025.pdf.); Examples can only be found when data has been analysed."
+      title: "Wind turbines environment",
+      text: "The evidence doesn’t suggest that wind turbines can be characterized as ‘disastrous’. In fact, their impacts on the environment and human health are very small compared to those from fossil fuel power plants."
     },
     {
       title: "Low-emission zones",
-      text: "Debunking can be found in a report written by QuotaClimat themselves in Data for Good, QuotaClimat, & ScienceFeedback (2025). Mapping Climate Disinformation in French and Brazilian Mainstream Media. https://quotaclimat.org/app/uploads/2025/10/Mapping-climate-disinformation-France-Brazil-medias-october-2025.pdf.); Examples can only be found when data has been analysed."
+      text: "Low-emissions zones have reduced their cities’ levels of air pollution by discouraging or prohibiting certain vehicles from entering certain zones. These air pollution decreases have led to observed health improvements, like reduced cases of respiratory illness. LEZs implementation does not aim to reduce greenhouse gas emissions."
     },
     {
-      title: "Air conditioning and climate",
-      text: "Debunking can be found in a report written by QuotaClimat themselves in Data for Good, QuotaClimat, & ScienceFeedback (2025). Mapping Climate Disinformation in French and Brazilian Mainstream Media. https://quotaclimat.org/app/uploads/2025/10/Mapping-climate-disinformation-France-Brazil-medias-october-2025.pdf.); Examples can only be found when data has been analysed."
+      title: "Historical climate fluctuations",
+      text: "Evidence shows that recent climate changes are driven by human activity – not natural factors – and are resulting in a rise in certain extreme weather events, especially extreme heat, which can negatively impact humans. Climate conditions – and their fluctuations – in Earth’s deeper past are not necessarily the ideal conditions for humans to thrive in (Earth’s ice ages were ‘natural fluctuations’, for example)."
+    },
+    {
+      title: "Renewables intermittency",
+      text: "Many countries are able to generate large parts of their electricity from intermittent renewables. There are numerous solutions to solar and wind’s intermittency, such as grid energy storage, that do not rely on fossil fuel power plants."
+    },
+    {
+      title: "State support renewables",
+      text: "In 2020, around the world only around a third of investment in renewables came from governments. The amount of support for renewables is lower than the amount of support for fossil fuels, and building renewables comes at much lesser cost to the environment than building fossil fuels. In France, the PPE3 proposal plans for €3 billion of that per year."
+    },{
+      title: "Renewables energy blackouts",
+      text: "There’s no evidence that adding solar and wind to the grid causes blackouts. We do need to adapt the grid to handle solar and wind, but electrical engineers are well aware of this problem and know how to address it."
+    },{
+      title: "Nuclear power sufficient",
+      text: "Nuclear power is a source of low-carbon electricity, but it is not the only source of clean electricity – renewables like solar and wind are just as low-carbon. While France has relatively very clean electricity thanks to its fleet of nuclear power plants, electricity isn’t the only form of energy. Due to vehicle fuels and home heating, fossil fuels still account for more than 60% of France’s energy consumption."
+    },{
+      title: "France low emissions",
+      text: "Both overall and per person (per capita), France emits significantly less greenhouse gases than large emitters like the U.S. or China. But France is certainly not the lowest emitter in the world. Overall, France ranks around 20th in the world for greenhouse gas emissions, with roughly 180 countries emitting less than them. France’s relatively lower per capita emissions are largely thanks to significant use of nuclear energy."
+    },{
+      title: "Limited impact of reducing GHG emissions",
+      text: "Reducing emissions in any country can help lower the total input of greenhouse gases to our atmosphere – our atmosphere doesn’t respond differently to one country’s emissions cuts over another. All countries emitting less than 2% of global emissions (France included) represent 37.6% of the total; so, even small emitters, like France, can help cut total emissions. "
+    },{
+      title: "Combustion vehicles ethanol and diesel",
+      text: "Although gasoline cars have become lower-emissions over time, regarding both CO2 and other air pollutants, their emissions are usually still higher than EVs. Diesel cars haven’t seen the same emissions reductions, and new diesel cars now have higher emissions than comparable gasoline cars. Ethanol is less polluting than gasoline or diesel, but many scientists are concerned about land use from ethanol production (from crop vegetables), making this fuel problematic for the environment."
+    },{
+      title: "Climate policies adaptation",
+      text: "Preliminary studies are common practice for many climate policies. These studies help planners understand a policy’s impacts, benefits, and drawbacks before it is implemented. Independent think tanks and academic researchers are also very active in simulating things like renewable energy."
+    },{
+      title: "Electric vehicles pollution",
+      text: "Across its entire life, a petrol vehicle is almost always responsible for more greenhouse gas emissions than a comparable electric vehicle. While electric vehicle batteries do include ecologically sensitive metals like lithium and nickel, experts don’t think their impacts outweigh those from the petroleum needed to power a combustion vehicle."
+    },{
+      title: "Data falsification",
+      text: "There is no evidence of mass ‘data falsification’ and ‘fraud’ in climate science – claims to the contrary rely on conspiracy theories, not evidence. Leading climate reports – like the most recent IPCC Sixth Assessment Report – are rigorously checked by hundreds of scientific experts around the world and transparently assign confidence levels to their findings."
+    },{
+      title: "Human origin of global warming",
+      text: "In climate reports, scientists assign confidence levels to different findings based on the strength and certainty of the supporting evidence. The world’s leading climate report describes human contribution to recent global warming as unequivocal – a word reserved for when evidence leaves virtually zero doubt. Specifically, evidence shows that humans have caused almost all of the warming since 1950. "
+    },{
+      title: "Air conditioning",
+      text: "Air conditioning has great benefits in the face of hot weather, but it’s not a solution without consequences. Air conditioning can effectively reduce deaths from extreme heat, but it also dramatically increases energy use and can lead to local heating."
     }
   ];
 
@@ -748,7 +877,29 @@
     const box = document.getElementById("detailBox");
     document.getElementById("detailTitle").innerText = scenarios[index].title;
     document.getElementById("detailText").innerText = scenarios[index].text;
+    document.getElementById("detailSource").innerHTML =
+    `
+      <strong>Source:</strong>
+      <a
+        href="${sourceUrl}"
+        target="_blank"
+        class="text-primary underline"
+      >
+        Science Feedback – Monitoring Climate Misinformation Narratives
+      </a>
+    `;
+    document.getElementById("detailSourceAPA").innerText = "Vincent, E., Terroille, C., Maréchal, A., Rao, R., & Burns, D. (2025, October 22). Insights from 8 Months of Monitoring Climate Misinformation on French TV and Radio: Scale and Narratives. Science Feedback. https://science.feedback.org/insights-monitoring-climate-misinformation-french-tv-radio-scale-narratives/";
     box.classList.remove("hidden");
+  }
+
+  function showMoreScenarios() {
+    document
+      .getElementById("extraScenarios")
+      .classList.remove("hidden");
+
+    document
+      .getElementById("showMoreBtn")
+      .style.display = "none";
   }
 </script>
 
